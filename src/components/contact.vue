@@ -1,7 +1,7 @@
 <template>
-<div class="site-width">
-  <h2>Elsewhere</h2>
-  <div class="elsewhere-links">
+<div class="site-width bs-grid no-padding">
+  <h2 class="bs-grid-col-12">Elsewhere</h2>
+  <div class="elsewhere-links bs-grid-col-12">
     <a href="https://www.linkedin.com/in/timmalabuyo/" class="link-linkedin link-icon" title="Tim Malabuyo on LinkedIn">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#fff">
         <path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5-18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5 18.9 0 34.2 15.5 34.2 34.5zm-5 58.9h-57.8v186.8h57.8V201.3zm92.4 0h-55.4v186.8h55.4v-98c0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9v98H398V269.8c0-50-28.3-74.2-68-74.2-39.6 0-56.3 30.9-56.3 30.9v-25.2h.1z"/></svg>
@@ -21,7 +21,7 @@
       </svg>
     </a>
   </div>
-  <p>Get in touch <a href="mailto:tim_m@bluespherestudios.com">tim_m@bluespherestudios.com</a></p>
+  <p class="bs-grid-col-12">Get in touch <a href="mailto:tim_m@bluespherestudios.com">tim_m@bluespherestudios.com</a></p>
 </div>
 </template>
 
@@ -35,6 +35,10 @@ export default class Contact extends Vue {}
 <style scoped lang="scss">
 @import '../shared/scss/vars';
 @import '../shared/scss/mixins';
+
+.site-width {
+  overflow: hidden;
+}
 
 h1, h2, h3, h4, h5, p, a {
   color: $color-white;

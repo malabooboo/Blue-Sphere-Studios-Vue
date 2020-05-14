@@ -1,9 +1,10 @@
 <template>
-<div class="site-width">
-  <h2>About</h2>
-  <p class="intro">I've been in the business of building websites
-    <a href="https://www.amazon.com/HTML-World-Visual-QuickStart-Guide/dp/0201884488" target="_blank" rel="noopener">since 1998</a>.</p>
-  <p>
+<div class="site-width bs-grid no-padding">
+  <div class="content bs-grid-col-12 bs-grid-md-offset-6 bs-grid-md-col-6">
+    <h2>About</h2>
+    <p class="intro">I've been in the business of building websites
+      <a href="https://www.amazon.com/HTML-World-Visual-QuickStart-Guide/dp/0201884488" target="_blank" rel="noopener">since 1998</a>.</p>
+    <p>
       In those years I have seen the web change and evolve, and I am proud to have
       been part of the early movement of web designers who championed web
       standards. During this time, I was heavily influenced by Dave Shea's
@@ -28,6 +29,7 @@
       <a href="https://www.linkedin.com/in/timmalabuyo/">UX Engineer at Google Stadia</a>. At Google, I have been part of many launches, including Google Stadia, Google for Work,
       Gmail, Calendar, Inbox, and the new Google Earth.
     </p>
+  </div>
 </div>
 </template>
 
@@ -43,13 +45,13 @@ export default class About extends Vue {}
 @import '../shared/scss/mixins';
 
 .site-width {
+  overflow: hidden;
+}
+
+.content {
   background: rgba($color-black, 0.8);
   margin-right: 0;
-  padding: 20px 40px;
-
-  @include tablet {
-    width: 50%;
-  }
+  padding: 40px;
 }
 
 h2 {

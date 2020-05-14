@@ -1,3 +1,5 @@
+@import './grid';
+
 html, body, header, main, footer, div, section, h1, h2, h3, h4, h5, h6, p, ul, li, blockquote {
   margin: 0;
   padding: 0;
@@ -34,7 +36,7 @@ b, strong {
 }
 
 .site-width {
-  @include site-width;
+  grid-column: 1 / -1;
 }
 
 .section .section-component {
@@ -75,3 +77,5 @@ a {
     display: inline;
   }
 }
+
+

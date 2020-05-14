@@ -11,14 +11,17 @@
 }
 
 @mixin section-padding {
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
-  @include tablet {
-    padding: 40px;
+  @include bp-sm {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
-  @include desktop {
-    padding: 60px;
+  @include bp-md {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 
@@ -46,9 +49,13 @@
   }
 }
 
+@mixin large-desktop {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
 @mixin vertical-center {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,28 +88,10 @@
 @mixin element-appear-resting {
   opacity: 0;
   transform: translateY(30px);
-  // opacity: 1;
-  // transform: translateY(0);
 }
 
 @mixin element-appear-in($delay: 0s) {
   opacity: 1;
   transform: translateY(0);
   transition: opacity .5s linear $delay, transform .5s ease-out $delay;
-}
-
-@mixin work-grid-2-columns {
-  grid-template-columns: repeat(2, 1fr);
-
-  @include large-mobile {
-    gap: 6%;
-  }
-}
-
-@mixin work-grid-3-columns {
-  grid-template-columns: repeat(3, 1fr);
-
-  @include large-mobile {
-    gap: 7% 5%;
-  }
 }

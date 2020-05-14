@@ -33,7 +33,7 @@ body {
   overflow-x: hidden;
 }
 
-section {
+section.bs-grid {
   @include section-padding;
 
   h2 {
@@ -44,16 +44,11 @@ section {
 
 // Top level sections
 
-.hero {
-  padding: 90px 20px 20px;
+.section-hero {
   background-color: $color-dark-gray;
   text-align: center;
 
   @include slanty-thing;
-
-  @include tablet {
-    padding: 130px 60px 60px;
-  }
 
   &::before {
     content: ' ';
@@ -70,6 +65,11 @@ section {
   &::after {
     bottom: -200px;
   }
+
+  &.bs-grid {
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
 }
 
 .section-about {
@@ -79,7 +79,7 @@ section {
   filter: saturate(.4);
 }
 
-.section-work {
+.section-work.bs-grid {
   padding-bottom: 20px;
 }
 

@@ -1,6 +1,5 @@
 <template>
-<header :class="{'header--up': !isScrollDirectionUp}"
-  class="header">
+<header :class="{'header--up': !isScrollDirectionUp}" class="header bs-grid">
   <div class="site-width">
     <div class="logo">
       <Logo />

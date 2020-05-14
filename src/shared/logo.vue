@@ -1,6 +1,10 @@
 <template>
 <div class="logo">
-  <img src="../assets/images/bss-logo.png" alt="Blue Sphere Studios logo">
+  <picture>
+    <source srcset="@/assets/images/bss-logo.webp" type="image/webp">
+    <source srcset="@/assets/images/bss-logo.png" type="image/png">
+    <img src="@/assets/images/bss-logo.png" alt="Blue Sphere Studios logo">
+  </picture>
 </div>
 </template>
 
@@ -12,8 +16,8 @@ export default class Logo extends Vue {}
 </script>
 
 <style scoped lang="scss">
-@import './scss/vars';
-@import './scss/mixins';
+@import '@/shared/scss/vars';
+@import '@/shared/scss/mixins';
 
 .logo {
   display: block;
@@ -28,5 +32,6 @@ export default class Logo extends Vue {}
 
 img {
   width: 100%;
+  display: block;
 }
 </style>

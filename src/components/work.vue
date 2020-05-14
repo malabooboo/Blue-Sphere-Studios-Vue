@@ -3,8 +3,8 @@
   <h2>Work</h2>
   <div class="work-google">
     <p class="intro">Over the last {{tenure}} years as part of Google's Stadia, Cloud, and Brand Studio teams in London and Mountain View, I have contributed to many different projects, including...</p>
-    <div class="carousel-content">
-      <ul class="recent-work">
+    <div class="carousel-content bs-grid no-padding">
+      <ul class="recent-work bs-grid-col-12 bs-grid-sm-col-4">
         <li><a @click="setWork('google-earth')" :class="{'active': currentWork == 'google-earth'}">Google Earth</a></li>
         <li><a @click="setWork('google-stadia')" :class="{'active': currentWork == 'google-stadia'}">Google Stadia</a></li>
         <li><a @click="setWork('qibla-finder')" :class="{'active': currentWork == 'qibla-finder'}">Qibla Finder</a></li>
@@ -12,7 +12,7 @@
         <li><a @click="setWork('petra')" :class="{'active': currentWork == 'petra'}">Petra <span class="mobile-hide">Treks / Petra VR</span></a></li>
         <li><a @click="setWork('google-inbox')" :class="{'active': currentWork == 'google-inbox'}"><span class="mobile-hide">Google</span> Inbox</a></li>
       </ul>
-      <div class="carousel">
+      <div class="carousel bs-grid-col-12 bs-grid-sm-col-8">
         <WorkCarouselEarth v-if="currentWork == 'google-earth'" />
         <WorkCarouselStadia v-if="currentWork == 'google-stadia'" />
         <WorkCarouselQiblaFinder v-if="currentWork == 'qibla-finder'" />
@@ -71,6 +71,7 @@ export default class Work extends Vue {
 <style scoped lang="scss">
 @import '../shared/scss/vars';
 @import '../shared/scss/mixins';
+@import '../shared/scss/grid';
 
 // :host {
 //   display: block;
@@ -91,18 +92,14 @@ export default class Work extends Vue {
 }
 
 .carousel-content {
-  display: grid;
-
-  @include work-grid-3-columns;
+  overflow: visible;
 }
 
 .recent-work {
   margin-bottom: 10px;
-  grid-column: 1 / span 3;
   text-align: center;
 
-  @include tablet {
-    grid-column: 1;
+  @include bp-sm {
     margin-bottom: 40px;
     margin-left: 30px;
     text-align: left;
@@ -133,10 +130,5 @@ export default class Work extends Vue {
 
 .carousel {
   position: relative;
-  grid-column: 1 / span 3;
-
-  @include tablet {
-    grid-column: 2 / span 2;
-  }
 }
 </style>

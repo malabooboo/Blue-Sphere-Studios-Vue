@@ -1,41 +1,39 @@
 <template>
-<div class="site-width">
-  <div class="content">
-    <div class="titles">
-      <h2>Skills and Stats</h2>
-      <p>Some of the tech I've used recently...</p>
-    </div>
-    <ul class="tags">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>AngularJs</li>
-      <li>Angular 2+</li>
-      <li>TypeScript</li>
-      <li>React</li>
-      <li>Vue.js</li>
-      <li>Django</li>
-      <li>Firebase</li>
-      <li>Google App Engine</li>
-      <li>Git</li>
-      <li>Accessibility</li>
-      <li>Prototyping</li>
-      <li>SASS</li>
-      <li>LESS</li>
-      <li>Photoshop</li>
-      <li>Illustrator</li>
-      <li>Web Standards</li>
-      <li>Typography</li>
-      <li>Photography</li>
-      <li>Lightroom</li>
-      <li>Google Maps API</li>
-      <li>Gulp / Grunt / Webpack</li>
-      <li>Node.js</li>
-      <li>Three.js</li>
-      <li>A-frame</li>
-      <li>D3</li>
-    </ul>
+<div class="site-width bs-grid no-padding">
+  <div class="titles bs-grid-col-12 bs-grid-sm-col-4">
+    <h2>Skills and Stats</h2>
+    <p>Some of the tech I've used recently...</p>
   </div>
+  <ul class="tags bs-grid-col-12 bs-grid-sm-col-8">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>AngularJs</li>
+    <li>Angular 2+</li>
+    <li>TypeScript</li>
+    <li>React</li>
+    <li>Vue.js</li>
+    <li>Django</li>
+    <li>Firebase</li>
+    <li>Google App Engine</li>
+    <li>Git</li>
+    <li>Accessibility</li>
+    <li>Prototyping</li>
+    <li>SASS</li>
+    <li>LESS</li>
+    <li>Photoshop</li>
+    <li>Illustrator</li>
+    <li>Web Standards</li>
+    <li>Typography</li>
+    <li>Photography</li>
+    <li>Lightroom</li>
+    <li>Google Maps API</li>
+    <li>Gulp / Grunt / Webpack</li>
+    <li>Node.js</li>
+    <li>Three.js</li>
+    <li>A-frame</li>
+    <li>D3</li>
+  </ul>
 </div>
 </template>
 
@@ -50,23 +48,14 @@ export default class Stats extends Vue {}
 @import '../shared/scss/vars';
 @import '../shared/scss/mixins';
 
-.content {
-  display: grid;
-  grid-template-columns: 32% 32% 32%;
-  gap: 10% 2%;
-  grid-template-rows: auto;
+.site-width {
+  overflow: hidden;
 }
 
 .titles {
-  grid-column: 1 / span 3;
-
   @include element-appear-resting;
   .in-view & {
     @include element-appear-in();
-  }
-
-  @include tablet {
-    grid-column: 1;
   }
 
   h2 {
@@ -76,15 +65,10 @@ export default class Stats extends Vue {}
 
 .tags {
   list-style-type: none;
-  grid-column: 1 / span 3;
 
   @include element-appear-resting;
   .in-view & {
     @include element-appear-in(.3s);
-  }
-
-  @include tablet {
-    grid-column: 2 / span 3;
   }
 }
 

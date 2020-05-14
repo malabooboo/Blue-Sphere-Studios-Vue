@@ -1,0 +1,282 @@
+/* small */
+@mixin bp-xs-sm() {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin bp-sm() {
+  @media screen and (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin bp-sm-md() {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+/* Medium */
+@mixin bp-md() {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+/* Large */
+@mixin bp-lg() {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+/* xlarge */
+@mixin bp-xl() {
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
+}
+
+/* Supplemental breakpoints */
+
+@mixin bp-480 {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin bp-768 {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin bp-960 {
+  @media screen and (min-width: 960px) {
+    @content;
+  }
+}
+
+/* The 12 column grid within the site-width */
+
+.bs-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(32px, 85px));
+  grid-template-rows: auto;
+  gap: 0 16px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 24px;
+  justify-content: center;
+  /* Prevents the horizontal scrollbar from showing due to full-bleed divs */
+  overflow-x: hidden;
+
+  @include bp-sm() {
+    grid-template-columns: repeat(12, minmax(34px, 61px));
+    padding: 0 32px;
+  }
+
+  @include bp-md() {
+    grid-template-columns: repeat(12, minmax(60px, 94px));
+    padding: 0 64px;
+  }
+
+  @include bp-lg() {
+    grid-template-columns: repeat(12, minmax(91px, 125px));
+    gap: 0 18px;
+    padding: 0 72px;
+  }
+
+  @include bp-xl() {
+    grid-template-columns: repeat(12, 125px);
+    gap: 0 20px;
+    padding: 0 100px;
+  }
+
+  &.full-width {
+    max-width: none;
+    margin-left: calc(50% - 49.6vw);
+    margin-right: calc(50% - 49.6vw);
+    grid-column: 1 / -1;
+  }
+
+  &.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@mixin simple-grid-props() {
+  grid-template-columns: repeat(6, 1fr);
+  padding: 0;
+  gap: 0;
+}
+
+.bs-grid.simple {
+  @include simple-grid-props();
+
+  @include bp-xs-sm() {
+    @include simple-grid-props();
+  }
+
+  @include bp-sm() {
+    @include simple-grid-props();
+  }
+
+  @include bp-sm-md() {
+    @include simple-grid-props();
+  }
+
+  @include bp-md() {
+    @include simple-grid-props();
+  }
+
+  @include bp-lg() {
+    @include simple-grid-props();
+  }
+
+  @include bp-xl() {
+    @include simple-grid-props();
+  }
+}
+
+/* Generates column classes */
+
+@for $i from 1 through 11 {
+  .bs-grid-col-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+
+  .bs-grid-col-12 {
+    grid-column: 1  / -1;
+  }
+}
+
+@include bp-xs-sm() {
+  @for $i from 1 through 11 {
+    .bs-grid-xs-sm-col-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+
+  .bs-grid-xs-sm-col-12 {
+    grid-column: 1  / -1;
+  }
+}
+
+@include bp-sm() {
+  @for $i from 1 through 11 {
+    .bs-grid-sm-col-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+
+  .bs-grid-sm-col-12 {
+    grid-column: 1  / -1;
+  }
+}
+
+@include bp-sm-md() {
+  @for $i from 1 through 11 {
+    .bs-grid-sm-md-col-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+
+  .bs-grid-sm-md-col-12 {
+    grid-column: 1  / -1;
+  }
+}
+
+@include bp-md() {
+  @for $i from 1 through 11 {
+    .bs-grid-md-col-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+
+  .bs-grid-md-col-12 {
+    grid-column: 1  / -1;
+  }
+}
+
+@include bp-lg() {
+  @for $i from 1 through 11 {
+    .bs-grid-lg-col-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+
+  .bs-grid-lg-col-12 {
+    grid-column: 1  / -1;
+  }
+}
+
+@include bp-xl() {
+  @for $i from 1 through 11 {
+    .bs-grid-xl-col-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+
+  .bs-grid-xl-col-12 {
+    grid-column: 1  / -1;
+  }
+}
+
+/* Generates offset classes */
+
+@for $i from 1 through 11 {
+  .bs-grid-offset-#{$i} {
+    grid-column-start: #{$i + 1};
+  }
+}
+
+@include bp-xs-sm() {
+  @for $i from 1 through 11 {
+    .bs-grid-sm-offset-#{$i} {
+      grid-column-start: #{$i + 1};
+    }
+  }
+}
+
+@include bp-sm() {
+  @for $i from 1 through 11 {
+    .bs-grid-sm-offset-#{$i} {
+      grid-column-start: #{$i + 1};
+    }
+  }
+}
+
+@include bp-sm-md() {
+  @for $i from 1 through 11 {
+    .bs-grid-sm-md-offset-#{$i} {
+      grid-column-start: #{$i + 1};
+    }
+  }
+}
+
+@include bp-md() {
+  @for $i from 1 through 11 {
+    .bs-grid-md-offset-#{$i} {
+      grid-column-start: #{$i + 1};
+    }
+  }
+}
+
+@include bp-lg() {
+  @for $i from 1 through 11 {
+    .bs-grid-lg-offset-#{$i} {
+      grid-column-start: #{$i + 1};
+    }
+  }
+}
+
+@include bp-xl() {
+  @for $i from 1 through 11 {
+    .bs-grid-xl-offset-#{$i} {
+      grid-column-start: #{$i + 1};
+    }
+  }
+}

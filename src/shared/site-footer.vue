@@ -1,7 +1,7 @@
 <template>
   <footer>
-    <div class="site-width">
-      <p>Copyright &copy; 2002 - {{currentYear}} Blue Sphere Studios</p>
+    <div class="site-width bs-grid">
+      <p class="bs-grid-col-12">Copyright &copy; 2002 - {{currentYear}} Blue Sphere Studios</p>
     </div>
   </footer>
 </template>
@@ -21,20 +21,21 @@ export default class SiteFooter extends Vue {
 
 <style scoped lang="scss">
 @import './scss/vars';
-@import './scss/mixins';
+@import './scss/grid';
 
-footer {
-  padding: 20px 20px 10px;
+footer{
   background-color: #223c6e;
+}
 
-  @include tablet {
-    padding: 20px 0 10px;
-  }
+.site-width.bs-grid {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
 
-  p {
-    color: rgba($color-white, .6);
-    font-size: 14px;
-    line-height: 1;
-  }
+p {
+  color: rgba($color-white, .6);
+  font-size: 14px;
+  line-height: 1;
+  margin: 0;
 }
 </style>

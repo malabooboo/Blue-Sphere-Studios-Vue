@@ -1,21 +1,21 @@
 <template>
   <div class="router-wrapper">
-    <section class="hero" id="home">
+    <section class="section-hero bs-grid" id="home">
       <Hero />
     </section>
-    <section class="section-work" id="work">
+    <section class="section-work bs-grid" id="work">
       <Work />
     </section>
-    <section class="section-past-work" id="past-work">
+    <section class="section-past-work bs-grid" id="past-work">
       <PastWork class="in-view" :class="{'in-view': sectionSeenState['past-work']}" />
     </section>
-    <section class="section-stats" id="stats">
+    <section class="section-stats bs-grid" id="stats">
       <Stats :class="{'in-view': sectionSeenState['stats']}" />
     </section>
-    <section class="section-about" id="about">
+    <section class="section-about bs-grid" id="about">
       <About :class="{'in-view': sectionSeenState['about']}" />
     </section>
-    <section class="section-contact" id="contact">
+    <section class="section-contact bs-grid" id="contact">
       <Contact :class="{'in-view': sectionSeenState['contact']}" />
     </section>
   </div>
