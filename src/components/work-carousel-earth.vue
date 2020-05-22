@@ -4,7 +4,7 @@
     <figure class="slide slide-1" :class="{'active': getCurrentSlide() == 1}">
       <img src="../assets/images/google-earth-splash-2.jpg" alt="Google Earth launch splash screen">
       <figcaption>The new Google Earth launched on Earth Day, 2017. I was responsible for building the front end platform for the first version of Voyager, the content
-        feed feature of the new Google Earth.</figcaption>
+        feed feature of the new Google Earth. <a href="http://earth.google.com" target="_blank">earth.google.com</a></figcaption>
     </figure>
     <figure class="slide slide-2" :class="{'active': getCurrentSlide() == 2}">
       <img src="../assets/images/google-earth-mission-blue-02.jpg" alt="Google Earth Voyager templates">

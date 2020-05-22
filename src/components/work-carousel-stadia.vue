@@ -9,7 +9,7 @@
     </picture>
     <figcaption>
       I handled some of the homepage animations for the Google Stadia launch as a 20% project, then joined the team full-time shortly after.
-      <a href="https://stadia.google.com">Visit the site</a>
+      <a href="https://stadia.google.com">stadia.google.com</a>
     </figcaption>
   </figure>
 </div>

@@ -4,7 +4,7 @@
   <figure class="slide slide-1" :class="{'active': getCurrentSlide() == 1}">
     <img src="../assets/images/google-qibla-finder-01.jpg" alt="Qibla Finder homepage">
   <figcaption>Qibla Finder was Google's Ramadan site for 2017, a complex web app which uses the user's location and compass to show them
-    the direction to Mecca, and 3D elements to provide an immersive experience.
+    the direction to Mecca, and 3D elements to provide an immersive experience. <a href="https://qiblafinder.withgoogle.com" target="_blank">qiblafinder.withgoogle.com</a>
     <a href="https://qiblafinder.withgoogle.com" target="_blank" rel="noopener">See the site</a></figcaption>
   </figure>
   <figure class="slide slide-2" :class="{'active': getCurrentSlide() == 2}">

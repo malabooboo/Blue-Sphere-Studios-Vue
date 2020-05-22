@@ -13,7 +13,7 @@
             </div>
           </div>
           <div class="content bs-grid-col-12 bs-grid-sm-col-3">
-            <h3>FileMaker, an Apple subsidiary</h3>
+            <h3><strike>Claris</strike> <strike>FileMaker</strike> Claris, an Apple subsidiary</h3>
             <p>From 2006 - 2013, I was part of FileMaker's web team, involved in the front-end development of the corporate website, an integral part of the multiple product launches every year.</p>
           </div>
         </div>
@@ -86,7 +86,7 @@ export default class PastWork extends Vue {}
   .image {
     display: block;
     width: 100%;
-    height: 80%;
+    height: 100%;
     object-fit: cover;
     border: 1px solid rgba($color-black, 0.2);
     box-shadow: 0 0 20px -10px rgba($color-black, 0.4);
@@ -131,8 +131,8 @@ export default class PastWork extends Vue {}
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   background: rgba($color-white, 0.7);
   opacity: 0;

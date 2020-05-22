@@ -8,7 +8,7 @@
       <img src="../assets/images/google-cloud-blog-01.jpg" alt="Google Cloud Blog">
     </picture>
     <figcaption>Google Cloud launched it's own blog, which consolidated many of the different Cloud-related blogs around the web
-      provided a single place for Cloud's announcements and articles.
+      provided a single place for Cloud's announcements and articles. <a href="https://cloud.google.com/blog" target="_blank">cloud.google.com/blog</a>
     </figcaption>
   </figure>
 </div>

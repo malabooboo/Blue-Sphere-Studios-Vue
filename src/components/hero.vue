@@ -77,6 +77,11 @@ h1 {
   }
 }
 
+.intro {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .strikethrough {
   text-decoration: line-through;
 }

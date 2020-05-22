@@ -4,8 +4,7 @@
   <figure class="slide slide-1" :class="{'active': getCurrentSlide() == 1}">
     <img src="../assets/images/google-inbox.jpg" alt="Google Inbox homepage">
     <figcaption>
-      I worked with an agency partner to launch the Inbox marketing site.
-      <a href="https://www.google.com/inbox">Visit the site</a>
+      I worked with an agency partner to launch the marketing site for the much-beloved-now-deprecated Google Inbox.
     </figcaption>
   </figure>
 </div>

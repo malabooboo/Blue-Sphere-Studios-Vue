@@ -6,7 +6,7 @@
       <figcaption>
         An immersive Treks experience for Petra in Jordan, famous for its temples and tombs. The site launched in 47 languages and
         allowed users to rediscover the lost city with Google Street View technology, audio narration and rich imagery.
-        <a href="https://g.co/Petra">Visit the site</a>
+        <a href="https://g.co/Petra" target="_blank">g.co/Petra</a>
       </figcaption>
     </figure>
     <figure class="slide slide-2" :class="{'active': getCurrentSlide() == 2}">
@@ -17,7 +17,7 @@
       <img src="../assets/images/google-petra-04.jpg" alt="Petra VR">
       <figcaption>
         Petra Cardboard VR built on the success of the Petra Treks site and allowed users to explore Petra in 3D Web VR with Google Cardboard.
-        <a href="https://g.co/PetraVR">Visit the site</a>
+        <a href="https://g.co/PetraVR" target="_blank">g.co/PetraVR</a>
       </figcaption>
     </figure>
     <figure class="slide slide-4" :class="{'active': getCurrentSlide() == 4}">
