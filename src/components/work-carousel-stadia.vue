@@ -12,6 +12,14 @@
       <a href="https://stadia.google.com">stadia.google.com</a>
     </figcaption>
   </figure>
+  <figure class="slide slide-2" :class="{'active': getCurrentSlide() == 2}">
+    <picture>
+      <source srcset="../assets/images/google-stadia-02.webp" type="image/webp">
+      <source srcset="../assets/images/google-stadia-02.jpg" type="image/jpeg">
+      <img src="../assets/images/google-stadia-02.jpg" alt="Google Stadia PWA allows Stadia to be playable on iOS devices">
+    </picture>
+    <figcaption>Stadia launched an iOS beta which involved converting the website into a PWA.</figcaption>
+  </figure>
 </div>
 <nav class="carousel-controls">
   <div class="carousel-controls--previous" @click="setPreviousSlide()" :class="{'hidden': getCurrentSlide() == 1}">
@@ -34,7 +42,7 @@ import {Component, Vue} from 'vue-property-decorator';
 @Component
 export default class WorkCarouselStadia extends Vue {
   private currentSlide: number = 1;
-  private totalSlides: number = 1;
+  private totalSlides: number = 2;
 
   private getCurrentSlide() {
     return this.currentSlide;
