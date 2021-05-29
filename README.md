@@ -24,6 +24,7 @@ npm run lint
 ```
 npm run deploy
 ```
+Runs `npm run build && firebase deploy --only hosting`, deploys to Firebase project
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
