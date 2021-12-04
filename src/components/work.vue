@@ -5,20 +5,18 @@
     <p class="intro">Over the last {{tenure}} years as part of Google's Stadia, Cloud, and Brand Studio teams in London and Mountain View, I have contributed to many different projects, including...</p>
     <div class="carousel-content bs-grid no-padding">
       <ul class="recent-work bs-grid-col-12 bs-grid-sm-col-4">
-        <li><a @click="setWork('google-earth')" :class="{'active': currentWork == 'google-earth'}">Google Earth</a></li>
         <li><a @click="setWork('google-stadia')" :class="{'active': currentWork == 'google-stadia'}">Google Stadia</a></li>
+        <li><a @click="setWork('google-earth')" :class="{'active': currentWork == 'google-earth'}">Google Earth</a></li>
         <li><a @click="setWork('qibla-finder')" :class="{'active': currentWork == 'qibla-finder'}">Qibla Finder</a></li>
         <li><a @click="setWork('cloud-blog')" :class="{'active': currentWork == 'cloud-blog'}">Cloud Blog</a></li>
         <li><a @click="setWork('petra')" :class="{'active': currentWork == 'petra'}">Petra <span class="mobile-hide">Treks / Petra VR</span></a></li>
-        <li><a @click="setWork('google-inbox')" :class="{'active': currentWork == 'google-inbox'}"><span class="mobile-hide">Google</span> Inbox</a></li>
       </ul>
       <div class="carousel bs-grid-col-12 bs-grid-sm-col-8">
-        <WorkCarouselEarth v-if="currentWork == 'google-earth'" />
         <WorkCarouselStadia v-if="currentWork == 'google-stadia'" />
+        <WorkCarouselEarth v-if="currentWork == 'google-earth'" />
         <WorkCarouselQiblaFinder v-if="currentWork == 'qibla-finder'" />
         <WorkCarouselCloudBlog v-if="currentWork == 'cloud-blog'" />
         <WorkCarouselPetra v-if="currentWork == 'petra'" />
-        <WorkCarouselInbox v-if="currentWork == 'google-inbox'" />
       </div>
     </div>
   </div>
@@ -32,7 +30,6 @@ import WorkCarouselEarth from '@/components/work-carousel-earth.vue';
 import WorkCarouselQiblaFinder from '@/components/work-carousel-qibla-finder.vue';
 import WorkCarouselPetra from '@/components/work-carousel-petra.vue';
 import WorkCarouselCloudBlog from '@/components/work-carousel-cloud-blog.vue';
-import WorkCarouselInbox from '@/components/work-carousel-inbox.vue';
 
 @Component({
   components: {
@@ -41,14 +38,13 @@ import WorkCarouselInbox from '@/components/work-carousel-inbox.vue';
     WorkCarouselQiblaFinder,
     WorkCarouselPetra,
     WorkCarouselCloudBlog,
-    WorkCarouselInbox,
   },
 })
 export default class Work extends Vue {
   private tenure: number = 3;
   private startYear: number = 2013;
   private currentYear = new Date().getFullYear();
-  private currentWork = 'google-earth';
+  private currentWork = 'google-stadia';
 
   private mounted() {
     this.tenure = this.yearsSince_(this.startYear, this.currentYear);
