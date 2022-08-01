@@ -1,6 +1,6 @@
 <template>
 <div class="carousel-wrapper">
-  <div class="slides">
+  <div class="slides" ref="slidesContainer">
   <figure class="slide slide-1" :class="{'active': getCurrentSlide() == 1}">
     <picture>
       <source srcset="../assets/images/google-stadia-01.webp" type="image/webp">
@@ -26,7 +26,15 @@
       <source srcset="../assets/images/google-stadia-03.jpg" type="image/jpeg">
       <img src="../assets/images/google-stadia-03.jpg" alt="Google Stadia platform search">
     </picture>
-    <figcaption>Implemented Stadia search, one of the most requested features as the game library grew.</figcaption>
+    <figcaption>Implemented Stadia search, one of the most requested features in 2021 as the game library continued to grow.</figcaption>
+  </figure>
+  <figure class="slide slide-4" :class="{'active': getCurrentSlide() == 4}">
+    <picture>
+      <source srcset="../assets/images/google-stadia-04.webp" type="image/webp">
+      <source srcset="../assets/images/google-stadia-04.jpg" type="image/jpeg">
+      <img src="../assets/images/google-stadia-04.jpg" alt="Google Immersive Stream for Games">
+    </picture>
+    <figcaption>Built the Web UI for the first release of Google Immersive Stream for Games.</figcaption>
   </figure>
 </div>
 <nav class="carousel-controls">
@@ -50,7 +58,21 @@ import {Component, Vue} from 'vue-property-decorator';
 @Component
 export default class WorkCarouselStadia extends Vue {
   private currentSlide: number = 1;
-  private totalSlides: number = 3;
+  private totalSlides?: number;
+
+  mounted() {
+    const slidesContainer = this.$refs.slidesContainer as HTMLElement;
+    this.totalSlides = slidesContainer.querySelectorAll('figure').length;
+
+    // Sets the height of main image area based on ratio 12:7 to prevent
+    // weird rendering before the image loads.
+    const srcWidth = 1200;
+    const srcHeight = 710;
+    const slide = slidesContainer.querySelector('figure');
+    const slideWidth = slide?.offsetWidth;
+    slidesContainer.style.minHeight =
+        slideWidth! * (srcHeight / srcWidth) + 'px';
+  }
 
   private getCurrentSlide() {
     return this.currentSlide;

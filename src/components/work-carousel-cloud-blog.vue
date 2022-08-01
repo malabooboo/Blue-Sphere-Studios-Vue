@@ -1,6 +1,6 @@
 <template>
 <div class="carousel-wrapper">
-  <div class="slides">
+  <div class="slides" ref="slidesContainer">
   <figure class="slide slide-1" :class="{'active': getCurrentSlide() == 1}">
     <picture>
       <source srcset="../assets/images/google-cloud-blog-01.webp" type="image/webp">
@@ -33,7 +33,21 @@ import {Component, Vue} from 'vue-property-decorator';
 @Component
 export default class WorkCarouselCloudBlog extends Vue {
   private currentSlide: number = 1;
-  private totalSlides: number = 1;
+  private totalSlides?: number;
+
+  mounted() {
+    const slidesContainer = this.$refs.slidesContainer as HTMLElement;
+    this.totalSlides = slidesContainer.querySelectorAll('figure').length;
+
+    // Sets the height of main image area based on ratio 12:7 to prevent
+    // weird rendering before the image loads.
+    const srcWidth = 1200;
+    const srcHeight = 710;
+    const slide = slidesContainer.querySelector('figure');
+    const slideWidth = slide?.offsetWidth;
+    slidesContainer.style.minHeight =
+        slideWidth! * (srcHeight / srcWidth) + 'px';
+  }
 
   private getCurrentSlide() {
     return this.currentSlide;

@@ -22,3 +22,5 @@ yarn-error.log*
 
 # Misc
 .firebase/
+.firebase/hosting.ZGlzdA.cache
+*.cache
