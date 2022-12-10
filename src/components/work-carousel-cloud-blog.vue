@@ -49,19 +49,19 @@ export default class WorkCarouselCloudBlog extends Vue {
         slideWidth! * (srcHeight / srcWidth) + 'px';
   }
 
-  private getCurrentSlide() {
+  getCurrentSlide() {
     return this.currentSlide;
   }
 
-  private getLastSlide() {
+  getLastSlide() {
     return this.totalSlides;
   }
 
-  private setPreviousSlide() {
+  setPreviousSlide() {
     this.currentSlide = this.getCurrentSlide() - 1;
   }
 
-  private setNextSlide() {
+  setNextSlide() {
     this.currentSlide = this.getCurrentSlide() + 1;
   }
 }

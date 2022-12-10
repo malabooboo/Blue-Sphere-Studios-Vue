@@ -41,10 +41,14 @@ import WorkCarouselCloudBlog from '@/components/work-carousel-cloud-blog.vue';
   },
 })
 export default class Work extends Vue {
-  private tenure: number = 3;
+  tenure: number = 3;
+  currentWork = 'google-stadia';
   private startYear: number = 2013;
   private currentYear = new Date().getFullYear();
-  private currentWork = 'google-stadia';
+
+  setWork(work: string) {
+    this.currentWork = work;
+  }
 
   private mounted() {
     this.tenure = this.yearsSince_(this.startYear, this.currentYear);
@@ -56,10 +60,6 @@ export default class Work extends Vue {
 
   private getWork(): string {
     return this.currentWork;
-  }
-
-  private setWork(work: string) {
-    this.currentWork = work;
   }
 }
 </script>

@@ -50,6 +50,14 @@ interface SectionState {
   },
 })
 export default class Home extends Vue {
+  /** The 'seen' state of each section for the build-in animation. */
+  sectionSeenState: SectionState = {
+    'past-work': false,
+    'stats': false,
+    'about': false,
+    'contact': false,
+  };
+
   @Prop() private scrollValue?: number;
 
   /** The current section info. */
@@ -61,14 +69,6 @@ export default class Home extends Vue {
 
   /** An array of the sections and their info */
   private sectionPositions: SectionPositionInfo[] = [];
-
-  /** The 'seen' state of each section for the build-in animation. */
-  private sectionSeenState: SectionState = {
-    'past-work': false,
-    'stats': false,
-    'about': false,
-    'contact': false,
-  };
 
   /*
    * Triggers the nav show/hide, and current section indicator.

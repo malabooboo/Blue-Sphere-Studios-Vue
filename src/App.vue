@@ -26,15 +26,20 @@ import SectionPositionInfo from './shared/interfaces';
   },
 })
 export default class App extends Vue {
-  private scrollValue: number = 0;
-  private timeout?: number;
+  scrollValue: number = 0;
 
   /** The current section info. */
-  private currentSection: SectionPositionInfo = {
+  currentSection: SectionPositionInfo = {
     name: 'home',
     yPositionStart: 0,
     yPositionEnd: 0,
   };
+
+  private timeout?: number;
+
+  onSectionChange(currentSection: SectionPositionInfo) {
+    this.currentSection =  currentSection;
+  }
 
   private mounted() {
     window.addEventListener('scroll', this.scrollHandler, false);
@@ -48,10 +53,6 @@ export default class App extends Vue {
     this.timeout = window.requestAnimationFrame(() => {
       this.scrollValue = document.documentElement.scrollTop;
     });
-  }
-
-  private onSectionChange(currentSection: SectionPositionInfo) {
-    this.currentSection =  currentSection;
   }
 }
 </script>
