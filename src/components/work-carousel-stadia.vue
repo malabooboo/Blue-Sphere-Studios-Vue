@@ -3,6 +3,28 @@
   <div class="slides" ref="slidesContainer">
   <figure class="slide slide-1" :class="{'active': getCurrentSlide() == 1}">
     <picture>
+      <source srcset="../assets/images/google-stadia-05.webp" type="image/webp">
+      <source srcset="../assets/images/google-stadia-05.jpg" type="image/jpeg">
+      <img src="../assets/images/google-stadia-05.jpg" alt="Google Stadia web redesign">
+    </picture>
+    <figcaption>
+      A complete redesign of the Stadia's homepage, which surfaced previously buried features such as free trials and games currently being played.
+      <a href="https://stadia.google.com">stadia.google.com</a>
+    </figcaption>
+  </figure>
+  <figure class="slide slide-2" :class="{'active': getCurrentSlide() == 2}">
+    <picture>
+      <source srcset="../assets/images/google-stadia-06.webp" type="image/webp">
+      <source srcset="../assets/images/google-stadia-06.jpg" type="image/jpeg">
+      <img src="../assets/images/google-stadia-06.jpg" alt="Google Stadia game menu redesign">
+    </picture>
+    <figcaption>
+      A consolidation and redesign of the game menu.
+      <a href="https://stadia.google.com">stadia.google.com</a>
+    </figcaption>
+  </figure>
+  <figure class="slide slide-3" :class="{'active': getCurrentSlide() == 3}">
+    <picture>
       <source srcset="../assets/images/google-stadia-01.webp" type="image/webp">
       <source srcset="../assets/images/google-stadia-01.jpg" type="image/jpeg">
       <img src="../assets/images/google-stadia-01.jpg" alt="Google Stadia launch splash screen">
@@ -12,7 +34,7 @@
       <a href="https://stadia.google.com">stadia.google.com</a>
     </figcaption>
   </figure>
-  <figure class="slide slide-2" :class="{'active': getCurrentSlide() == 2}">
+  <figure class="slide slide-4" :class="{'active': getCurrentSlide() == 4}">
     <picture>
       <source srcset="../assets/images/google-stadia-02.webp" type="image/webp">
       <source srcset="../assets/images/google-stadia-02.jpg" type="image/jpeg">
@@ -20,7 +42,7 @@
     </picture>
     <figcaption>Stadia launched an iOS beta which involved converting the website into a PWA.</figcaption>
   </figure>
-  <figure class="slide slide-3" :class="{'active': getCurrentSlide() == 3}">
+  <figure class="slide slide-5" :class="{'active': getCurrentSlide() == 5}">
     <picture>
       <source srcset="../assets/images/google-stadia-03.webp" type="image/webp">
       <source srcset="../assets/images/google-stadia-03.jpg" type="image/jpeg">
@@ -28,7 +50,7 @@
     </picture>
     <figcaption>Implemented Stadia search, one of the most requested features in 2021 as the game library continued to grow.</figcaption>
   </figure>
-  <figure class="slide slide-4" :class="{'active': getCurrentSlide() == 4}">
+  <figure class="slide slide-6" :class="{'active': getCurrentSlide() == 6}">
     <picture>
       <source srcset="../assets/images/google-stadia-04.webp" type="image/webp">
       <source srcset="../assets/images/google-stadia-04.jpg" type="image/jpeg">
