@@ -1,20 +1,31 @@
 <template>
 <header :class="{'header--up': !isScrollDirectionUp}" class="header bs-grid">
   <div class="site-width">
-    <div class="logo">
+    <div class="logo" v-if="!isWorkDetailPage">
       <Logo />
       <h1>Blue Sphere Studios</h1>
     </div>
-    <nav>
+    <div class="logo active-link" v-else>
+      <Logo @click="navigateHome()" />
+      <h1 @click="navigateHome()">Blue Sphere Studios</h1>
+    </div>
+    <nav v-if="!isWorkDetailPage">
       <ul class="global-nav">
-        <li :class="{'selected': currentSection.name == 'home'}"  class="nav-item">
+        <li v-if="currentSection" :class="{'selected': currentSection.name == 'home'}"  class="nav-item">
           <span><a href="#home" v-smooth-scroll class="gnav-link">Home</a></span>
         </li>
-        <li :class="{'selected': currentSection.name == 'work' || currentSection.name == 'past-work' || currentSection.name == 'stats'}" class="nav-item">
+        <li v-if="currentSection" :class="{'selected': currentSection.name == 'work' || currentSection.name == 'past-work' || currentSection.name == 'stats'}" class="nav-item">
           <span><a href="#work" v-smooth-scroll class="gnav-link">Work</a></span>
         </li>
-        <li :class="{'selected': currentSection.name == 'about'}" class="nav-item">
+        <li v-if="currentSection" :class="{'selected': currentSection.name == 'about'}" class="nav-item">
           <span><a href="#about" v-smooth-scroll class="gnav-link mobile-hidden">About</a></span>
+        </li>
+      </ul>
+    </nav>
+    <nav class="work" v-else>
+      <ul class="global-nav">
+        <li class="nav-item">
+          <router-link :to="'/'" exact class="larr">Back to home</router-link>
         </li>
       </ul>
     </nav>
@@ -33,9 +44,11 @@ import SectionPositionInfo from '../shared/interfaces';
   },
 })
 export default class SiteHeader extends Vue {
-  @Prop() private scrollValue?: number;
-  @Prop() private currentSection?: SectionPositionInfo;
-  private isScrollDirectionUp: boolean = true;
+  @Prop() currentSection?: SectionPositionInfo;
+  @Prop() scrollValue?: number;
+  @Prop() isWorkDetailPage?: boolean;
+  isScrollDirectionUp: boolean = true;
+  isWork: boolean = false; // whether or not it's a work detail page
 
   /*
    * Triggers the nav show/hide
@@ -49,6 +62,10 @@ export default class SiteHeader extends Vue {
     } else {
       this.isScrollDirectionUp = true;
     }
+  }
+
+  navigateHome() {
+    this.$router.push('/');
   }
 }
 </script>
@@ -95,7 +112,10 @@ $header-height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+
+  &.active-link {
+    cursor: pointer;
+  }
 
   h1 {
     margin-bottom: 0;
@@ -122,6 +142,12 @@ nav {
   justify-content: flex-end;
   margin-top: 8px;
   list-style: none;
+
+  .work & {
+    margin: 0;
+    height: 100%;
+    align-items: center;  
+  }
 }
 
 .nav-item {

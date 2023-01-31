@@ -2,27 +2,24 @@
 @import './shared/scss/mixins';
 @import './shared/scss/base';
 
-@mixin slanty-thing {
-  position: relative;
-  overflow: hidden;
+.fade-enter-active {
+  transform: translateY(0);
+  transition: all 0.3s $animate-material-curve 0.167s;
+}
 
-  &::after {
-    content: ' ';
-    width: 150%;
-    height: 300px;
-    background: rgba($color-black, .1);
-    position: absolute;
-    bottom: -215px;
-    left: 0;
-    -webkit-transform: rotate(-4deg);
-    transform: rotate(-4deg);
-    z-index: 1;
-  }
+.fade-leave-active {
+  transform: translateY(0);
+  transition: all 0.167s $animate-material-curve;
+}
 
-  div {
-    position: relative;
-    z-index: 2;
-  }
+.fade-enter {
+  transform: translateY(-30px);
+  opacity: 0;
+}
+
+.fade-leave-to {
+  transform: translateY(-30px);
+  opacity: 0;
 }
 
 :host {
@@ -94,3 +91,32 @@ section.bs-grid {
   background-color: $color-gray;
   @include slanty-thing;
 }
+
+.rarr::after {
+  content: '→';
+  position: absolute;
+  transform: translateX(4px);
+  transition: transform .6s $animate-material-curve;
+}
+
+.rarr:hover::after {
+  transform: translateX(8px);
+  transition: transform .3s $animate-material-curve;
+}
+
+.larr.nav-item {
+  padding-left: 30px;
+}
+
+.larr::after {
+  content: '←';
+  position: absolute;
+  left: 0;
+  transform: translateX(-4px);
+  transition: transform .6s $animate-material-curve;
+}
+
+.larr:hover::after {
+  transform: translateX(-8px);
+  transition: transform .3s $animate-material-curve;
+} 

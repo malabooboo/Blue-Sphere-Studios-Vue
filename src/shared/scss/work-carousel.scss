@@ -6,6 +6,7 @@
 
   img {
     width: 100%;
+    display: block;
     box-shadow: 0 0 20px -10px $color-black;
   }
 }
@@ -17,6 +18,7 @@
   margin: 0;
   opacity: 0;
   transition: opacity .3s ease-out;
+  z-index: unset;
 
   &.slide-1 {
     position: relative;
@@ -25,6 +27,58 @@
   &.active {
     opacity: 1;
     transition: opacity .3s ease-out;
+    z-index: 100;
+  }
+}
+
+picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  // // filter: brightness(1);
+  // // transition: filter .3s $animate-material-curve;
+
+  // &:hover {
+  //   cursor: pointer;
+  //   // filter: brightness(0.3);
+  //   // transition: filter .3s $animate-material-curve;
+  // }
+
+  &.with-details {
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: rgba($color-black, .6);
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 10;
+    }
+  
+    &::after {
+      content: 'More details →';
+      position: absolute;
+      text-align: center;
+      color: $color-white;
+      background: rgba($color-black, .9);
+      font-size: 22px;
+      padding: 10px 20px;
+      z-index: 12;
+      opacity: 0;
+      transition: opacity .3s $animate-material-curve;
+    }
+  
+    &:hover {
+      cursor: pointer;
+    }
+  
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+      transition: opacity .3s $animate-material-curve;
+    }
   }
 }
 
@@ -32,6 +86,7 @@
   position: absolute;
   top: 50%;
   width: 100%;
+  z-index: 110;
 
   @include large-mobile {
     top: 55%;

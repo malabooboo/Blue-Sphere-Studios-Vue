@@ -2,7 +2,7 @@
 <div class="site-width work-container">
   <h2>Work</h2>
   <div class="work-google">
-    <p class="intro">Over the last {{tenure}} years as part of Google's Stadia, Cloud, and Brand Studio teams in London and Mountain View, I have contributed to many different projects, including...</p>
+    <p class="intro">Over the last {{tenure}} years as part of several Google and YouTube teams in London and Mountain View, I have contributed to many different projects.</p>
     <div class="carousel-content bs-grid no-padding">
       <ul class="recent-work bs-grid-col-12 bs-grid-sm-col-4">
         <li><a @click="setWork('google-stadia')" :class="{'active': currentWork == 'google-stadia'}">Google Stadia</a></li>

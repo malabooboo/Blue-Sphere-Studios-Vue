@@ -95,3 +95,26 @@
   transform: translateY(0);
   transition: opacity .5s linear $delay, transform .5s ease-out $delay;
 }
+
+@mixin slanty-thing {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: ' ';
+    width: 150%;
+    height: 300px;
+    background: rgba($color-black, .1);
+    position: absolute;
+    bottom: -215px;
+    left: 0;
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+    z-index: 1;
+  }
+
+  div {
+    position: relative;
+    z-index: 2;
+  }
+}

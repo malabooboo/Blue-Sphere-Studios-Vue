@@ -1,0 +1,102 @@
+.page-wrapper {
+  // margin-top: 70px;
+  // padding-top: 30px;
+  padding-top: 100px;
+}
+
+.bs-grid {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &:first-child {
+    padding-bottom: 0;
+  }
+}
+
+.primary-heading {
+  font-size: 200%;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+}
+
+// .breadcrumbs.bs-grid {
+//   padding-top: 70px;
+//   background-color: $color-gray;
+
+//   ul {
+//     display: flex;
+//     margin: 0;
+//     padding: 0;
+
+//     li {
+//       list-style: none;
+//       font-size: 13px;
+//       display: block;
+//       padding: 10px;
+//       text-transform: uppercase;
+//     }
+
+//     li:first-child {
+//       padding-left: 0;
+//     }
+
+//     a {
+//       display: block;
+//       font-size: 13px;
+//     }
+//   }
+// }
+
+.summary {
+  p:first-child {
+    font-size: 22px;
+  }
+} 
+
+ul {
+  margin: 0 0 10px 40px;
+  
+  li {
+    padding-left: 10px;
+  }
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: block;
+
+  img {
+    width: 100%;
+  }
+
+  figcaption {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+
+.carousel-feature-image img {
+  margin-top: 30px;
+}
+
+.carousel-animation {
+  position: relative;
+  overflow: hidden;
+  margin: 40px 0;
+  padding: 40px;
+  background-color: $color-gray;
+
+  @include slanty-thing();
+  &::after {
+    top: 50%;
+    bottom: auto;
+  }
+}
+
+.divider {
+  border-top: 1px solid #ddd;
+  padding-bottom: 40px;
+}

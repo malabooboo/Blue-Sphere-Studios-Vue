@@ -2,15 +2,15 @@
 <div class="carousel-wrapper">
   <div class="slides" ref="slidesContainer">
   <figure class="slide slide-1" :class="{'active': getCurrentSlide() == 1}">
-    <picture>
+    <picture class="with-details" @click="navigateTo('/work/stadia-home-redesign')">
       <source srcset="../assets/images/google-stadia-05.webp" type="image/webp">
       <source srcset="../assets/images/google-stadia-05.jpg" type="image/jpeg">
       <img src="../assets/images/google-stadia-05.jpg" alt="Google Stadia web redesign">
     </picture>
     <figcaption>
       A complete redesign of the Stadia's homepage, which surfaced previously buried features such as free trials and games currently being played.
-      <a href="https://stadia.google.com">stadia.google.com</a>
     </figcaption>
+    <router-link :to="'/work/stadia-home-redesign'" exact class="rarr">Details</router-link>
   </figure>
   <figure class="slide slide-2" :class="{'active': getCurrentSlide() == 2}">
     <picture>
@@ -31,7 +31,6 @@
     </picture>
     <figcaption>
       I handled some of the homepage animations for the Google Stadia launch as a 20% project, then joined the team full-time shortly after.
-      <a href="https://stadia.google.com">stadia.google.com</a>
     </figcaption>
   </figure>
   <figure class="slide slide-4" :class="{'active': getCurrentSlide() == 4}">
@@ -110,6 +109,10 @@ export default class WorkCarouselStadia extends Vue {
 
   setNextSlide() {
     this.currentSlide = this.getCurrentSlide() + 1;
+  }
+
+  navigateTo(route: string) {
+    this.$router.push(route);
   }
 }
 </script>
