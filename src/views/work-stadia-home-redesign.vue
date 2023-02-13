@@ -1,15 +1,14 @@
 <template>
   <div class="page-wrapper">
-    <!-- <div class="breadcrumbs bs-grid">
-      <ul class="bs-grid-col-12">
-        <li><router-link :to="'/'" exact>Home</router-link></li>
-        <li><router-link :to="'/portfolio'" exact>Portfolio</router-link></li>
-        <li><b>Stadia homepage redesign</b></li>
-      </ul>
-    </div> -->
     <section class="bs-grid">
-      <h2 class="primary-heading bs-grid-col-12 bs-grid-sm-md-col-4">Stadia homepage redesign</h2>
-      <div class="summary bs-grid-col-12 bs-grid-sm-md-col-8">
+      <h2 class="primary-heading
+                 bs-grid-col-12
+                 bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
+        Stadia homepage redesign
+      </h2>
+      <div class="summary
+                  bs-grid-col-12
+                  bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
         <p>In 2022, a project began to completely redesign the Stadia.com homepage for logged-in users to increase game and feature discovery,
           highlight current activity on the plaform, feature the games in the existing library, and showcase the value of Stadia Pro.</p>
         <p>I was the primary UX Engineer on the project, building the UI, working with both software engineers and UX design.</p>
@@ -17,8 +16,13 @@
     </section>
     <section class="compare bs-grid">
       <div class="divider bs-grid-col-12"></div>
-      <h2 class="bs-grid-col-12 bs-grid-sm-md-col-4">Stadia homepage redesign, a comparison</h2>
-      <div class="before-after bs-grid-col-12 bs-grid-sm-md-col-8">
+      <h2 class="bs-grid-col-12
+                 bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
+        Stadia homepage redesign, a comparison
+      </h2>
+      <div class="before-after figure-wrapper
+                  bs-grid-col-12
+                  bs-grid-sm-md-offset-1 bs-grid-sm-md-col-10">
         <figure class="figure-before">
           <figcaption>Previous Stadia homepage</figcaption>
           <picture>
@@ -38,10 +42,17 @@
     </section>
     <section class="games bs-grid">
       <div class="divider bs-grid-col-12"></div>
-      <h2 class="bs-grid-col-12 bs-grid-sm-md-col-4">Putting games front and center</h2>
-      <div class="carousel-feature-copy bs-grid-col-12 bs-grid-sm-md-col-8">
+      <h2 class="bs-grid-col-12
+                 bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
+        Putting games front and center
+      </h2>
+      <div class="bs-grid-col-12
+                 bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
         <p>A big part of the redesign was the hero carousel, which displayed large, engaging cards that covered the major areas of player intent, including resuming your gameplay, joining a public party, finding free trials, and seeing games new to Stadia Pro.</p>
         <p>These cards exposed features that were previously buried within menus often several clicks deep.</p>
+      </div>
+      <div class="bs-grid-col-12
+                  bs-grid-sm-md-offset-1 bs-grid-sm-md-col-10">
         <figure class="carousel-feature-image">
           <picture>
             <source srcset="@/assets/images/portfolio/stadia-hero-carousel.webp, @/assets/images/portfolio/stadia-hero-carousel_2x.webp 2x" type="image/webp">
@@ -54,8 +65,12 @@
     </section>
     <section class="contributions bs-grid">
       <div class="divider bs-grid-col-12"></div>
-      <h2 class="bs-grid-col-12 bs-grid-sm-md-col-4">My contributions</h2>
-      <div class="carousel-feature-copy bs-grid-col-12 bs-grid-sm-md-col-8">
+      <h2 class="bs-grid-col-12
+                 bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
+        Contributions
+      </h2>
+      <div class="bs-grid-col-12
+                 bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
         <p>I was one of two UXE partnered with a team of software engineers tasked with building the redesigned homepage. I scoped the project tasks for UXE, was involved in daily standups, and authored much of the front-end code, leveraging existing components and building new ones.</p>
         <p>UXE acted as the bridge between UXD and engineering, and really owned the front-facing UX-related issues. This allowed SWE to focus on their tasks of authoring the middle and backend code and scaling.</p>
         <ul>
@@ -68,8 +83,12 @@
     </section>
     <section class="reception bs-grid">
       <div class="divider bs-grid-col-12"></div>
-      <h2 class="bs-grid-col-12 bs-grid-sm-md-col-4">Reception</h2>
-      <div class="carousel-feature-copy bs-grid-col-12 bs-grid-sm-md-col-8">
+      <h2 class="bs-grid-col-12
+                 bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
+        Reception
+      </h2>
+      <div class="bs-grid-col-12
+                 bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
         <p>During user testing, the user surveys were overwhelmingly positive, above 90% just before launch. The new homepage was in the process of launching on September 29, 2022 when it was announced that Stadia would be turned down, so it never fully launched to all users, unfortunately.</p>
         <p>Despite only being ramped to small percentage of users, the intial reactions was already positive (<a href="https://www.reddit.com/r/Stadia/comments/xqmv7d/did_stadia_get_a_new_ui/" target="_blank" rel="noopener">Reddit</a>, <a href="https://twitter.com/ViviPlaysYT/status/1575222098456608768" target="_blank" rel="noopener">Twitter</a>)</p>
         <div class="carousel-animation">
@@ -120,9 +139,5 @@ export default class WorkStadiaHomeRedesign extends Vue {}
       width: 60%;
     }
   }
-}
-
-.carousel-animation {
-  width: 60%;
 }
 </style>

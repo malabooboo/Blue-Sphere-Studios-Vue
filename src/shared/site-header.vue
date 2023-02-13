@@ -48,7 +48,10 @@ export default class SiteHeader extends Vue {
   @Prop() scrollValue?: number;
   @Prop() isWorkDetailPage?: boolean;
   isScrollDirectionUp: boolean = true;
-  isWork: boolean = false; // whether or not it's a work detail page
+
+  navigateHome() {
+    this.$router.push('/');
+  }
 
   /*
    * Triggers the nav show/hide
@@ -62,10 +65,6 @@ export default class SiteHeader extends Vue {
     } else {
       this.isScrollDirectionUp = true;
     }
-  }
-
-  navigateHome() {
-    this.$router.push('/');
   }
 }
 </script>

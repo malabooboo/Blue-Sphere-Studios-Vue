@@ -2,18 +2,27 @@
 <div class="carousel-wrapper">
   <div class="slides" ref="slidesContainer">
   <figure class="slide slide-1" :class="{'active': getCurrentSlide() == 1}">
-    <img src="../assets/images/google-qibla-finder-01.jpg" alt="Qibla Finder homepage">
+    <picture class="with-details" @click="navigateTo('/work/qibla-finder')">
+      <img src="../assets/images/google-qibla-finder-01.jpg" alt="Qibla Finder homepage">
+    </picture>
     <figcaption>Qibla Finder was Google's Ramadan site for 2017, a complex web app which uses the user's location and compass to show them
     the direction to Mecca, and 3D elements to provide an immersive experience. <a href="https://qiblafinder.withgoogle.com" target="_blank">qiblafinder.withgoogle.com</a>
     <a href="https://qiblafinder.withgoogle.com" target="_blank" rel="noopener">See the site</a></figcaption>
+    <router-link :to="'/work/qibla-finder'" exact class="rarr">Details</router-link>
   </figure>
   <figure class="slide slide-2" :class="{'active': getCurrentSlide() == 2}">
-    <img src="../assets/images/google-qibla-finder-03.jpg" alt="Qibla Finder">
+    <picture class="with-details" @click="navigateTo('/work/qibla-finder')">
+      <img src="../assets/images/google-qibla-finder-03.jpg" alt="Qibla Finder">
+    </picture>
     <figcaption>Tech used on the site included Angular, Three.js, geolocation, and Web Navigator APIs.</figcaption>
+    <router-link :to="'/work/qibla-finder'" exact class="rarr">Details</router-link>
   </figure>
   <figure class="slide slide-3" :class="{'active': getCurrentSlide() == 3}">
-    <img src="../assets/images/google-qibla-finder-02.jpg" alt="Qibla Finder">
+    <picture class="with-details" @click="navigateTo('/work/qibla-finder')">
+      <img src="../assets/images/google-qibla-finder-02.jpg" alt="Qibla Finder">
+    </picture>
     <figcaption>Qibla Finder was well-received and has been kept live after Ramadan 2017 and actively developed since then.</figcaption>
+    <router-link :to="'/work/qibla-finder'" exact class="rarr">Details</router-link>
   </figure>
 </div>
 <nav class="carousel-controls">
@@ -68,6 +77,10 @@ export default class WorkCarouselQiblaFinder extends Vue {
 
   setNextSlide() {
     this.currentSlide = this.getCurrentSlide() + 1;
+  }
+
+  navigateTo(route: string) {
+    this.$router.push(route);
   }
 }
 </script>

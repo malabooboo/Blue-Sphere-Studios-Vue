@@ -2,22 +2,34 @@
 <div class="carousel-wrapper">
   <div class="slides" ref="slidesContainer">
     <figure class="slide slide-1" :class="{'active': getCurrentSlide() == 1}">
-      <img src="../assets/images/google-earth-splash-2.jpg" alt="Google Earth launch splash screen">
+      <picture class="with-details" @click="navigateTo('/work/google-earth')">
+        <img src="../assets/images/google-earth-splash-2.jpg" alt="Google Earth launch splash screen">
+      </picture>
       <figcaption>The new Google Earth launched on Earth Day, 2017. I was responsible for building the front end platform for the first version of Voyager, the content
         feed feature of the new Google Earth. <a href="http://earth.google.com" target="_blank">earth.google.com</a></figcaption>
+      <router-link :to="'/work/google-earth'" exact class="rarr">Details</router-link>
     </figure>
     <figure class="slide slide-2" :class="{'active': getCurrentSlide() == 2}">
-      <img src="../assets/images/google-earth-mission-blue-02.jpg" alt="Google Earth Voyager templates">
+      <picture class="with-details" @click="navigateTo('/work/google-earth')">
+        <img src="../assets/images/google-earth-mission-blue-02.jpg" alt="Google Earth Voyager templates">
+      </picture>
       <figcaption>The templates are currently being used by many of Google Earth's content partners, including BBC, National Geographic,
         NASA, and the Jane Goodall Institute.</figcaption>
+      <router-link :to="'/work/google-earth'" exact class="rarr">Details</router-link>
     </figure>
     <figure class="slide slide-3" :class="{'active': getCurrentSlide() == 3}">
-      <img src="../assets/images/google-earth-national-treasures.jpg" alt="Google Earth Voyager templates">
+      <picture class="with-details" @click="navigateTo('/work/google-earth')">
+        <img src="../assets/images/google-earth-national-treasures.jpg" alt="Google Earth Voyager templates">
+      </picture>
       <figcaption></figcaption>
+      <router-link :to="'/work/google-earth'" exact class="rarr">Details</router-link>
     </figure>
     <figure class="slide slide-4" :class="{'active': getCurrentSlide() == 4}">
-      <img src="../assets/images/google-earth-mission-blue-01.jpg" alt="Google Earth Voyager templates">
+      <picture class="with-details" @click="navigateTo('/work/google-earth')">
+        <img src="../assets/images/google-earth-mission-blue-01.jpg" alt="Google Earth Voyager templates">
+      </picture>
       <figcaption></figcaption>
+      <router-link :to="'/work/google-earth'" exact class="rarr">Details</router-link>
     </figure>
   </div>
   <nav class="carousel-controls">
@@ -71,6 +83,10 @@ export default class WorkCarouselEarth extends Vue {
 
   setNextSlide() {
     this.currentSlide = this.getCurrentSlide() + 1;
+  }
+
+  navigateTo(route: string) {
+    this.$router.push(route);
   }
 }
 </script>
