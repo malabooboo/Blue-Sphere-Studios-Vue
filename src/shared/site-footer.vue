@@ -11,7 +11,7 @@ import {Component, Vue} from 'vue-property-decorator';
 
 @Component
 export default class SiteFooter extends Vue {
-  currentYear: number = 2018;
+  currentYear = 2018;
 
   private mounted() {
     this.currentYear = new Date().getFullYear();

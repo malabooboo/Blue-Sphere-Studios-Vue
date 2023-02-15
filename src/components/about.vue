@@ -19,9 +19,9 @@
       companies.
     </p>
     <p>
-      As the industry has matured and specialized, I’ve gone from a web generalist
-      (a.k.a <i>webmaster</i>) to specializing in front end, but still keep
-      current on the design side, just so I feel like I’m making some use of that
+      As the industry has matured and specialized, I've gone from a web generalist
+      (a.k.a <i>webmaster</i>, yes, I've had that job title in the past) to specializing in front end, but still keep
+      current on the design side, just so I feel like I'm making some use of that
       art degree!
     </p>
     <p>

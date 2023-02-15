@@ -83,7 +83,7 @@ $header-height: 70px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 30;
+  z-index: 300;
   width: 100%;
   height: $header-height;
   background-color: #223c6e;

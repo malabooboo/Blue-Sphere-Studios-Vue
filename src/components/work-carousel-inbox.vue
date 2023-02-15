@@ -28,7 +28,7 @@ import {Component, Vue} from 'vue-property-decorator';
 
 @Component
 export default class WorkCarouselInbox extends Vue {
-  private currentSlide: number = 1;
+  private currentSlide = 1;
   private totalSlides?: number;
 
   mounted() {

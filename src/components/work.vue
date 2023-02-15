@@ -2,21 +2,25 @@
 <div class="site-width work-container">
   <h2>Work</h2>
   <div class="work-google">
-    <p class="intro">Over the last {{tenure}} years as part of several Google and YouTube teams in London and Mountain View, I have contributed to many different projects.</p>
     <div class="carousel-content bs-grid no-padding">
-      <ul class="recent-work bs-grid-col-12 bs-grid-sm-col-4">
-        <li><a @click="setWork('google-stadia')" :class="{'active': currentWork == 'google-stadia'}">Google Stadia</a></li>
-        <li><a @click="setWork('google-earth')" :class="{'active': currentWork == 'google-earth'}">Google Earth</a></li>
-        <li><a @click="setWork('qibla-finder')" :class="{'active': currentWork == 'qibla-finder'}">Qibla Finder</a></li>
-        <li><a @click="setWork('cloud-blog')" :class="{'active': currentWork == 'cloud-blog'}">Cloud Blog</a></li>
-        <li><a @click="setWork('petra')" :class="{'active': currentWork == 'petra'}">Petra <span class="mobile-hide">Treks / Petra VR</span></a></li>
-      </ul>
+      <div class="recent-work bs-grid-col-12 bs-grid-sm-col-4">
+        <p class="intro">Over the last {{tenure}} years as part of several Google and YouTube teams in London and the California Bay Area, I've had the opportunity to work with some amazing people on many different projects.</p>
+        <ul>
+          <li><a @click="setWork('google-stadia')" :class="{'active': currentWork == 'google-stadia'}">Google Stadia</a></li>
+          <li><a @click="setWork('google-earth')" :class="{'active': currentWork == 'google-earth'}">Google Earth</a></li>
+          <li><a @click="setWork('qibla-finder')" :class="{'active': currentWork == 'qibla-finder'}">Qibla Finder</a></li>
+          <li><a @click="setWork('cloud-blog')" :class="{'active': currentWork == 'cloud-blog'}">Cloud Blog</a></li>
+          <li><a @click="setWork('petra')" :class="{'active': currentWork == 'petra'}">Petra <span class="mobile-hide">Treks / Petra VR</span></a></li>
+        </ul>
+      </div>
       <div class="carousel bs-grid-col-12 bs-grid-sm-col-8">
-        <WorkCarouselStadia v-if="currentWork == 'google-stadia'" />
-        <WorkCarouselEarth v-if="currentWork == 'google-earth'" />
-        <WorkCarouselQiblaFinder v-if="currentWork == 'qibla-finder'" />
-        <WorkCarouselCloudBlog v-if="currentWork == 'cloud-blog'" />
-        <WorkCarouselPetra v-if="currentWork == 'petra'" />
+        <transition name="fade">
+          <WorkCarouselStadia v-if="currentWork == 'google-stadia' && !isResizing" />
+          <WorkCarouselEarth v-if="currentWork == 'google-earth'" />
+          <WorkCarouselQiblaFinder v-if="currentWork == 'qibla-finder'" />
+          <WorkCarouselCloudBlog v-if="currentWork == 'cloud-blog'" />
+          <WorkCarouselPetra v-if="currentWork == 'petra'" />
+        </transition>
       </div>
     </div>
   </div>
@@ -24,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
+import {Component, Prop, Vue} from 'vue-property-decorator';
 import WorkCarouselStadia from '@/components/work-carousel-stadia.vue';
 import WorkCarouselEarth from '@/components/work-carousel-earth.vue';
 import WorkCarouselQiblaFinder from '@/components/work-carousel-qibla-finder.vue';
@@ -41,9 +45,11 @@ import WorkCarouselCloudBlog from '@/components/work-carousel-cloud-blog.vue';
   },
 })
 export default class Work extends Vue {
-  tenure: number = 3;
+  tenure = 3;
   currentWork = 'google-stadia';
-  private startYear: number = 2013;
+  @Prop() isResizing?: boolean;
+
+  private startYear = 2013;
   private currentYear = new Date().getFullYear();
 
   setWork(work: string) {
@@ -69,14 +75,9 @@ export default class Work extends Vue {
 @import '../shared/scss/mixins';
 @import '../shared/scss/grid';
 
-// :host {
-//   display: block;
-
-//   @include site-width;
-// }
-
 .intro {
   margin-bottom: 40px;
+  text-align: left;
 }
 
 .work-logo {
@@ -97,7 +98,6 @@ export default class Work extends Vue {
 
   @include bp-sm {
     margin-bottom: 40px;
-    margin-left: 30px;
     text-align: left;
   }
 

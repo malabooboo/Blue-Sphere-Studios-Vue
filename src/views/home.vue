@@ -4,7 +4,7 @@
       <Hero />
     </section>
     <section class="section-work bs-grid" id="work">
-      <Work />
+      <Work :isResizing="isResizing" />
     </section>
     <section class="section-past-work bs-grid" id="past-work">
       <PastWork class="in-view" :class="{'in-view': sectionSeenState['past-work']}" />
@@ -58,6 +58,7 @@ export default class Home extends Vue {
     'contact': false,
   };
 
+  @Prop() isResizing?: boolean;
   @Prop() private scrollValue?: number;
 
   /** The current section info. */
