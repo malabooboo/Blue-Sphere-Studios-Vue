@@ -56,7 +56,8 @@ export default class App extends Vue {
 
     // Toggles top nav type
     if (newVal.path) {
-      this.isWorkDetailPage = (newVal.path).includes('/work/');
+      this.isWorkDetailPage =
+        (newVal.path).includes('/work/') || (newVal.path).includes('/resume');
     }
 
     // Changes title, description

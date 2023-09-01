@@ -26,7 +26,7 @@
     </p>
     <p>
       I'm currently coding away as a
-      <a href="https://www.linkedin.com/in/timmalabuyo/">UX Engineer at Google Stadia</a>. At Google, I have been part of many launches, including Google Stadia, Google for Work,
+      <a href="https://www.linkedin.com/in/timmalabuyo/">UX Engineer at YouTube</a>. At Google, I have been part of many launches, including Google Stadia, Google for Work,
       Gmail, Calendar, Inbox, and the new Google Earth.
     </p>
   </div>

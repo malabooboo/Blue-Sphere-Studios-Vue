@@ -1,5 +1,5 @@
 /**
- * Not currently used, but keeping here for reference.
+ * Site routing.
  */
 import Vue from 'vue';
 import Router from 'vue-router';
@@ -14,12 +14,21 @@ export default new Router({
       name: 'home',
       component: Home,
     },
+    // {
+    //   path: '/about',
+    //   name: 'about-page',
+    //   component: () => import('./views/about-page.vue'),
+    //   meta: {
+    //     title: 'About me - Blue Sphere Studios / Tim Malabuyo',
+    //     description: 'A little bit about Tim Malabuyo, UX Engineer',
+    //   },
+    // },
     {
       path: '/work/stadia-home-redesign',
       name: 'work-stadia-home-redesign',
       component: () => import('./views/work-stadia-home-redesign.vue'),
       meta: {
-        title: 'Stadia web homepage redesign',
+        title: 'Stadia web homepage redesign - Blue Sphere Studios / Tim Malabuyo',
         description: 'Details about the Stadia web homepage redesign, part of the portfolio of Tim Malabuyo, UX Engineer',
       },
     },
@@ -28,7 +37,7 @@ export default new Router({
       name: 'work-stadia-game-menu',
       component: () => import('./views/work-stadia-game-menu.vue'),
       meta: {
-        title: 'Stadia web game menu',
+        title: 'Stadia web game menu - Blue Sphere Studios / Tim Malabuyo',
         description: 'Details about the Stadia game menu and  redesign, part of the portfolio of Tim Malabuyo, UX Engineer',
       },
     },
@@ -37,7 +46,7 @@ export default new Router({
       name: 'work-stadia-launch',
       component: () => import('./views/work-stadia-launch.vue'),
       meta: {
-        title: 'Stadia launch 2019',
+        title: 'Stadia launch 2019 - Blue Sphere Studios / Tim Malabuyo',
         description: 'Details about the Stadia launch, part of the portfolio of Tim Malabuyo, UX Engineer',
       },
     },
@@ -46,7 +55,7 @@ export default new Router({
       name: 'work-stadia-gameplay-ios',
       component: () => import('./views/work-stadia-gameplay-ios.vue'),
       meta: {
-        title: 'Stadia gameplay on iOS',
+        title: 'Stadia gameplay on iOS - Blue Sphere Studios / Tim Malabuyo',
         description: 'Details about the Stadia gameplay on iOS, part of the portfolio of Tim Malabuyo, UX Engineer',
       },
     },
@@ -55,7 +64,7 @@ export default new Router({
       name: 'work-stadia-immersive-stream',
       component: () => import('./views/work-stadia-immersive-stream.vue'),
       meta: {
-        title: 'Immersive Stream for Games',
+        title: 'Immersive Stream for Games - Blue Sphere Studios / Tim Malabuyo',
         description: 'Details about Immersive Stream for Games, part of the portfolio of Tim Malabuyo, UX Engineer',
       },
     },
@@ -64,7 +73,7 @@ export default new Router({
       name: 'work-stadia-search',
       component: () => import('./views/work-stadia-search.vue'),
       meta: {
-        title: 'Stadia Platform Search',
+        title: 'Stadia Platform Search - Blue Sphere Studios / Tim Malabuyo',
         description: 'Details about Stadia Platform Search, part of the portfolio of Tim Malabuyo, UX Engineer',
       },
     },
@@ -73,7 +82,7 @@ export default new Router({
       name: 'work-google-earth',
       component: () => import('./views/work-google-earth.vue'),
       meta: {
-        title: 'Google Earth 2017 Launch',
+        title: 'Google Earth 2017 Launch - Blue Sphere Studios / Tim Malabuyo',
         description: 'Details about Google Earth, part of the portfolio of Tim Malabuyo, UX Engineer',
       },
     },
@@ -82,8 +91,17 @@ export default new Router({
       name: 'work-qibla-finder',
       component: () => import('./views/work-qibla-finder.vue'),
       meta: {
-        title: 'Qibla Finder',
+        title: 'Qibla Finder - Blue Sphere Studios / Tim Malabuyo',
         description: 'Details about Qilba Finder, part of the portfolio of Tim Malabuyo, UX Engineer',
+      },
+    },
+    {
+      path: '/resume',
+      name: 'resume',
+      component: () => import('./views/resume.vue'),
+      meta: {
+        title: 'Resume - Blue Sphere Studios / Tim Malabuyo',
+        description: 'The resume of Tim Malabuyo, web front end engineer',
       },
     },
     // {

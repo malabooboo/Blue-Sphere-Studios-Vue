@@ -232,12 +232,19 @@
     grid-column-start: #{$i + 1};
   }
 }
+.bs-grid-offset-0 {
+  grid-column-start: auto
+}
 
 @include bp-xs-sm() {
   @for $i from 1 through 11 {
     .bs-grid-sm-offset-#{$i} {
       grid-column-start: #{$i + 1};
     }
+  }
+
+  .bs-grid-xs-sm-offset-0 {
+    grid-column-start: auto
   }
 }
 
@@ -247,6 +254,10 @@
       grid-column-start: #{$i + 1};
     }
   }
+
+  .bs-grid-sm-offset-0 {
+    grid-column-start: auto
+  }
 }
 
 @include bp-sm-md() {
@@ -254,6 +265,10 @@
     .bs-grid-sm-md-offset-#{$i} {
       grid-column-start: #{$i + 1};
     }
+  }
+
+  .bs-grid-sm-md-offset-0 {
+    grid-column-start: auto
   }
 }
 
@@ -263,6 +278,10 @@
       grid-column-start: #{$i + 1};
     }
   }
+
+  .bs-grid-md-offset-0 {
+    grid-column-start: auto
+  }
 }
 
 @include bp-lg() {
@@ -271,6 +290,10 @@
       grid-column-start: #{$i + 1};
     }
   }
+
+  .bs-grid-lg-offset-0 {
+    grid-column-start: auto
+  }
 }
 
 @include bp-xl() {
@@ -278,5 +301,9 @@
     .bs-grid-xl-offset-#{$i} {
       grid-column-start: #{$i + 1};
     }
+  }
+
+  .bs-grid-xl-offset-0 {
+    grid-column-start: auto
   }
 }
