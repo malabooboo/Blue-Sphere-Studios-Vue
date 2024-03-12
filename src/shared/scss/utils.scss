@@ -1,0 +1,62 @@
+$size_base: 16;
+
+$size_1: (1rem / $size_base);
+$size_2: (2rem / $size_base);
+$size_3: (3rem / $size_base);
+$size_4: (4rem / $size_base);
+$size_5: (5rem / $size_base);
+$size_6: (6rem / $size_base);
+$size_7: (7rem / $size_base);
+$size_8: (8rem / $size_base);
+$size_9: (9rem / $size_base);
+$size_10: (10rem / $size_base);
+$size_12: (12rem / $size_base);
+$size_13: (13rem / $size_base);
+$size_14: (14rem / $size_base);
+$size_15: (15rem / $size_base);
+$size_16: (16rem / $size_base);
+$size_17: (17rem / $size_base);
+$size_18: (18rem / $size_base);
+$size_20: (20rem / $size_base);
+$size_21: (21rem / $size_base);
+$size_22: (22rem / $size_base);
+$size_24: (24rem / $size_base);
+$size_25: (25rem / $size_base);
+$size_26: (26rem / $size_base);
+$size_27: (27rem / $size_base);
+$size_28: (28rem / $size_base);
+$size_30: (30rem / $size_base);
+$size_32: (32rem / $size_base);
+$size_34: (34rem / $size_base);
+$size_36: (36rem / $size_base);
+$size_37: (37rem / $size_base);
+$size_38: (38rem / $size_base);
+$size_40: (40rem / $size_base);
+$size_40: (40rem / $size_base);
+$size_42: (42rem / $size_base);
+$size_44: (44rem / $size_base);
+$size_45: (45rem / $size_base);
+$size_46: (46rem / $size_base);
+$size_48: (48rem / $size_base);
+$size_50: (50rem / $size_base);
+$size_56: (56rem / $size_base);
+$size_60: (60rem / $size_base);
+$size_64: (64rem / $size_base);
+$size_72: (72rem / $size_base);
+$size_80: (80rem / $size_base);
+
+$sizes: 8, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 120, 140, 160;
+
+@each $size in $sizes {
+  .u-mt-#{$size} {
+    margin-top: #{$size}px;
+  }
+
+  .u-mb-#{$size} {
+    margin-bottom: #{$size}px;
+  }
+
+  .u-mr-#{$size} {
+    margin-right: #{$size}px;
+  }
+}

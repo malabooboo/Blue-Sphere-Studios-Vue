@@ -1,3 +1,5 @@
+@import './vars';
+
 @mixin site-width {
   box-sizing: border-box;
   margin: 0 auto;
@@ -93,7 +95,7 @@
 @mixin element-appear-in($delay: 0s) {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity .5s linear $delay, transform .5s ease-out $delay;
+  transition: opacity .5s linear $delay, transform .5s $animate-material-curve $delay;
 }
 
 @mixin slanty-thing {

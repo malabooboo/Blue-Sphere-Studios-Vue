@@ -17,13 +17,13 @@
                   bs-grid-col-12
                   bs-grid-md-offset-2 bs-grid-md-col-8
                   bs-grid-lg-offset-2 bs-grid-lg-col-6">
-        <p>Experienced software engineer with a unique combination of a background in art and design paired with over 20 years of tech industry expertise in front end web technologies.</p>
+        <p>Experienced software engineer with a unique combination of a background in <span>art and design</span> paired with over 20 years of tech industry expertise in front end web technologies.</p>
       </div>
     </section>
     <section class="compare bs-grid">
       <div class="main
                   bs-grid-col-12
-                  bs-grid-md-offset-2 bs-grid-md-col-8
+                bs-grid-md-offset-2 bs-grid-md-col-8
                   bs-grid-lg-offset-2 bs-grid-lg-col-6">
         <h2>Recent Experience</h2>
         <div class="work">
@@ -44,14 +44,15 @@
             <li>Front end production and prototype work across several Alphabet teams including YouTube, Stadia, Google Cloud, Google Earth, Google Photos, and Brand Studio</li>
             <li>Roles
               <ul style="margin-bottom: 0;">
-                <li>Currently the sole YouTube UXE for an unannounced project: both a prototyper for design and user studies, as well as an engineer on the final production build of the product</li>
-                <li>Primary UXE for the Stadia web platform: built features such as platform search, the game menu, and a homepage redesign, developed and enforced the Stadia design system</li>
+                <li>Currently the YouTube Playables UXE: both a prototyper for design and user studies, as well as an engineer on the final production build of the product</li>
+                <li>Senior UXE on the Stadia UX team, and the primary UXE for the web platform: built features such as platform search, the game menu, and a homepage redesign, developed and enforced the Stadia's design system</li>
                 <li>Senior UXE with Google Cloud: created pages on cloud.google.com for all Google Cloud products, and was a key team member in the development of the Cloud Blog and CMS</li>
                 <li>Founding engineer of Brand Studio EMEA in London: built sites including Petra Maps and Qibla Finder which cultivated Google's brand in that region</li>
               </ul>
             </li>
             <li>Contributed to the launch of Google Earth in 2017 by architecting a design system for partners to build experiences with the Voyager feature</li>
             <li>Served on the Diversity, Equity, and Inclusion committee for Google UX Engineering</li>
+            <li>Awarded two promotions, 20 spot bonuses for outstanding contributions and impact, and nearly 50 peer bonuses</li>
           </ul>
         </div>
         <div class="work">
@@ -127,8 +128,9 @@
           <li>HTML</li>
           <li>CSS, Sass, PostCSS</li>
           <li>React</li>
+          <li>Next.js</li>
           <li>Vue.js</li>
-          <li>Angular & AngularJs</li>
+          <li>Angular</li>
           <li>Svelte</li>
           <li>Various internal Google front end frameworks</li>
           <li>Firebase</li>
@@ -145,7 +147,8 @@
         <h2 style="margin-top: 40px;">Work samples</h2>
         <ul class="unstyled">
           <li>Detailed case studies in the <router-link :to="'/'" exact class="larr">homepage work section</router-link></li>
-          <li class="spacer"><a href="https://g.co/Petra" rel="nofollow noopener" target="_blank">g.co/Petra</a></li>
+          <li class="spacer"><a href="https://www.youtube.com/playables" rel="nofollow noopener" target="_blank">YouTube Playables</a></li>
+          <li><a href="https://g.co/Petra" rel="nofollow noopener" target="_blank">g.co/Petra</a></li>
           <li><a href="https://cloud.google.com" rel="nofollow noopener" target="_blank">cloud.google.com</a></li>
           <li><a href="https://earth.google.com" rel="nofollow noopener" target="_blank">earth.google.com</a></li>
           <li><a href="https://stadia.google.com" rel="nofollow noopener" target="_blank">stadia.google.com</a></li>
@@ -170,6 +173,10 @@ export default class Resume extends Vue {}
 @import '../shared/scss/mixins';
 @import '../shared/scss/grid';
 @import '../shared/scss/work';
+
+.summary span {
+  white-space: nowrap;
+}
 
 h2 {
   color: $color-blue-accent;

@@ -8,19 +8,19 @@
     <li>HTML</li>
     <li>CSS</li>
     <li>JavaScript</li>
-    <li>AngularJs</li>
-    <li>Angular 2+</li>
     <li>TypeScript</li>
+    <li>Angular</li>
     <li>React</li>
+    <li>Next.js</li>
     <li>Vue.js</li>
-    <li>Django</li>
+    <li>Svelte</li>
     <li>Firebase</li>
-    <li>Google App Engine</li>
+    <li>Google Cloud Platform</li>
     <li>Git</li>
     <li>Accessibility</li>
     <li>Prototyping</li>
     <li>SASS</li>
-    <li>LESS</li>
+    <li>Figma</li>
     <li>Photoshop</li>
     <li>Illustrator</li>
     <li>Web Standards</li>

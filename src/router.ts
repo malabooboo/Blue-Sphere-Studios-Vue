@@ -14,15 +14,15 @@ export default new Router({
       name: 'home',
       component: Home,
     },
-    // {
-    //   path: '/about',
-    //   name: 'about-page',
-    //   component: () => import('./views/about-page.vue'),
-    //   meta: {
-    //     title: 'About me - Blue Sphere Studios / Tim Malabuyo',
-    //     description: 'A little bit about Tim Malabuyo, UX Engineer',
-    //   },
-    // },
+    {
+      path: '/about-me',
+      name: 'about-page',
+      component: () => import('./views/about-page.vue'),
+      meta: {
+        title: 'About me - Blue Sphere Studios / Tim Malabuyo',
+        description: 'A little bit about Tim Malabuyo, UX Engineer',
+      },
+    },
     {
       path: '/work/stadia-home-redesign',
       name: 'work-stadia-home-redesign',
