@@ -123,7 +123,7 @@
                   bs-grid-md-offset-2
                   bs-grid-lg-offset-0 bs-grid-lg-col-2">
         <h2>Professional Skills</h2>
-        <ul class="unstyled">
+        <ul class="unstyled skills-list">
           <li>JavaScript & TypeScript</li>
           <li>HTML</li>
           <li>CSS, Sass, PostCSS</li>
@@ -174,8 +174,14 @@ export default class Resume extends Vue {}
 @import '../shared/scss/grid';
 @import '../shared/scss/work';
 
-.summary span {
-  white-space: nowrap;
+.summary {
+  p {
+    line-height: 32px;
+  }
+
+  span {
+    white-space: nowrap;
+  }
 }
 
 h2 {
@@ -310,6 +316,7 @@ h2 {
     margin-bottom: 10px;
   }
 }
+
 .unstyled {
   list-style: none;
   padding-left: 20px;
@@ -330,6 +337,71 @@ h2 {
   .skills {
     padding-left: 30px;
     border-left: 1px solid rgba($color-black, .2);
+  }
+}
+
+@media print {
+  .page-wrapper {
+    padding-top: 0;
+  }
+
+  .resume-label {
+    display: none;
+  }
+
+  .primary-heading {
+    font-size: 32px;
+  }
+
+  .summary p:first-child {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  ul {
+    margin: 0 0 10px 20px;
+  }
+
+  li {
+    font-size: 14px;
+  }
+
+  .bs-grid {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow-y: hidden;
+  }
+
+  .work-headings {
+    .dates {
+      font-size: 12px;
+    }
+
+    .company {
+      font-size: 16px;
+    }
+
+    .job-title {
+      font-size: 16px;
+    }
+  }
+
+  .highlights {
+    li {
+      margin-bottom: 5px;
+    }
+  }
+
+  .unstyled.skills-list {
+    li {
+      display: inline-block;
+      text-indent: 0;
+      margin: 0 10px;
+    }
+
+    .spacer {
+      margin-top: 0;
+    }
   }
 }
 </style>
