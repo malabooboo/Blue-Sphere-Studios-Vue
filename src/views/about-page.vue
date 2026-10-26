@@ -12,8 +12,8 @@
                   bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
         <p class="intro">Hello!  I'm Tim, a software engineer specializing in front end and user experience.</p>
         <p>
-          Currently, I'm a YouTube User Experience Engineer (UXE), but have been on various teams at Google since 2013, including Brand Studio, Cloud, and Stadia.
-          I love building products as part of a great team, and am in my zone when coding with a cup of coffee with good music.
+          Currently, I'm a Waymo User Experience Engineer (UXE), but have been on various teams at Google since 2013, including Brand Studio, Cloud, Stadia (RIP), and YouTube.
+          I love building products as part of a great team, and am in my zone when coding with a boba and good music.
         </p>
       </div>
       <div class="background
@@ -22,9 +22,9 @@
         <h3>A bit of background</h3>
         <figure>
           <picture>
-            <img src="../assets/images/me-at-youtube.jpg" alt="">
+            <img src="../assets/images/tim-at-waymo.jpg" alt="">
           </picture>
-          <figcaption>I started at YouTube in October 2022.</figcaption>
+          <figcaption>I started at Waymo in May 2026.</figcaption>
         </figure>
         <p>
           The web was exploding in popularity in the late 90's when I started tinkering with HTML. Someone (dad?) had given me a book that many of us started,
@@ -59,7 +59,7 @@
           As a UX Engineer at Google, you'll combine your design, engineering, and product intuition to help build experiences for everyone to enjoy.
         </blockquote>
         <p class="u-mt-20 u-mb-20">
-          As a UXE in recent roles at Google and YouTube, I get to work as an engineer in service of UX, bridging the gap between design and engineering.
+          As a UXE in recent roles at Waymo, Google, and YouTube, I get to work as an engineer in service of UX, bridging the gap between design and engineering.
           I often partner with UX to create high-fidelity prototypes, then with software engineers in implementing product features into production.
         </p>
         <figure>

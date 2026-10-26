@@ -4,7 +4,6 @@
       <figure
         class="slide slide-1"
         :class="{ 'slide--active': getCurrentSlide() == 1 }"
-        id="slide-1"
       >
         <picture>
           <source
@@ -34,11 +33,9 @@
       <figure
         class="slide slide-2"
         :class="{ 'slide--active': getCurrentSlide() == 2 }"
-        id="slide-2"
       >
         <iframe
-          v-bind:width="mediaWidth"
-          v-bind:height="mediaHeight"
+          :style="{ aspectRatio: mediaAspectRatio }"
           src="https://www.youtube.com/embed/kUt4DStyM8Q?si=OS4nr4OOy0P_kAmC&amp;controls=0"
           title="YouTube video player"
           frameborder="0"
@@ -58,7 +55,7 @@
     <nav class="carousel-controls">
       <div
         class="carousel-controls--previous"
-        @click="setPreviousSlide($event)"
+        @click="setPreviousSlide()"
         :class="{ hidden: getCurrentSlide() == 1 }"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -70,7 +67,7 @@
       </div>
       <div
         class="carousel-controls--next"
-        @click="setNextSlide($event)"
+        @click="setNextSlide()"
         :class="{ hidden: getCurrentSlide() == getLastSlide() }"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -85,66 +82,34 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import {Component} from 'vue-property-decorator';
+import WorkCarousel from '@/shared/work-carousel';
 
 @Component
-export default class WorkCarouselYouTube extends Vue {
-  mediaWidth = 1200;
-  mediaHeight = 710;
-  private currentSlide = 1;
-  private totalSlides?: number;
+export default class WorkCarouselYouTube extends WorkCarousel {
+  /** Aspect ratio for the YouTube embed, matched to the first slide's image. */
+  mediaAspectRatio = '1200 / 710';
 
   mounted() {
-    const slidesContainer = this.$refs.slidesContainer as HTMLElement;
-    this.totalSlides = slidesContainer.querySelectorAll('figure').length;
-    slidesContainer.querySelectorAll('figure').forEach((slide) => {
-      slide.style.width = slidesContainer.offsetWidth + 'px';
-    });
-
-    // Uses the dimensions of the first image to set the width and height
-    // for the video iframe YouTube embed
     const firstImageEl = this.$refs.firstImageEl as HTMLImageElement;
-    firstImageEl.addEventListener('load', () => {
-      this.mediaWidth = firstImageEl.clientWidth;
-      this.mediaHeight = firstImageEl.clientHeight;
-    });
-  }
-
-  getCurrentSlide() {
-    return this.currentSlide;
-  }
-
-  getLastSlide() {
-    return this.totalSlides;
-  }
-
-  setPreviousSlide(event: Event) {
-    this.currentSlide = this.getCurrentSlide() - 1;
-    this.navigateToSlide(event);
-  }
-
-  setNextSlide(event: Event) {
-    this.currentSlide = this.getCurrentSlide() + 1;
-    this.navigateToSlide(event);
-  }
-
-  navigateToSlide(event: Event) {
-    const currentSlideEl = document.getElementById(
-      'slide-' + this.currentSlide,
-    );
-    currentSlideEl!.scrollIntoView({
-      // behavior: 'smooth',
-      block: 'nearest',
-      inline: 'center',
-    });
-  }
-
-  navigateTo(route: string) {
-    this.$router.push(route);
+    const setAspectRatio = () => {
+      this.mediaAspectRatio = `${firstImageEl.naturalWidth} / ${firstImageEl.naturalHeight}`;
+    };
+    if (firstImageEl.complete && firstImageEl.naturalWidth) {
+      setAspectRatio();
+    } else {
+      firstImageEl.addEventListener('load', setAspectRatio, {once: true});
+    }
   }
 }
 </script>
 
 <style scoped lang="scss">
 @use '../shared/scss/work-carousel' as *;
+
+iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 </style>

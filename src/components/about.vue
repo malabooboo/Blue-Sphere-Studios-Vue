@@ -26,7 +26,7 @@
     </p>
     <p>
       I'm currently coding away as a
-      <a href="https://www.linkedin.com/in/timmalabuyo/" target="_blank" rel="nofollow noreferrer noopener">UX Engineer at YouTube</a>. At Google, I have been part of many launches, including Google Stadia, Google for Work,
+      <a href="https://www.linkedin.com/in/timmalabuyo/" target="_blank" rel="nofollow noreferrer noopener">UX Engineer at Waymo</a>. At Google, I have been part of many launches, including Google Stadia, YouTube Playables, Google for Work,
       Gmail, Calendar, Inbox, and the new Google Earth.
     </p>
     <p style="margin-top: 20px; text-align: right;"><router-link :to="'/about-me'" exact class="rarr" style="color: #fff">More about me</router-link></p>

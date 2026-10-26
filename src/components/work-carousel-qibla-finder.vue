@@ -1,7 +1,7 @@
 <template>
 <div class="carousel-wrapper">
   <div class="carousel-slides" ref="slidesContainer">
-    <figure class="slide slide-1" :class="{'slide--active': getCurrentSlide() == 1}" id="slide-1">
+    <figure class="slide slide-1" :class="{'slide--active': getCurrentSlide() == 1}">
       <picture class="with-details" @click="navigateTo('/work/qibla-finder')">
         <img src="../assets/images/google-qibla-finder-01.jpg" alt="Qibla Finder homepage">
       </picture>
@@ -10,14 +10,14 @@
       <a href="https://qiblafinder.withgoogle.com" target="_blank" rel="noopener">See the site</a></figcaption>
       <router-link :to="'/work/qibla-finder'" exact class="rarr">Details</router-link>
     </figure>
-    <figure class="slide slide-2" :class="{'slide--active': getCurrentSlide() == 2}" id="slide-2">
+    <figure class="slide slide-2" :class="{'slide--active': getCurrentSlide() == 2}">
       <picture class="with-details" @click="navigateTo('/work/qibla-finder')">
         <img src="../assets/images/google-qibla-finder-03.jpg" alt="Qibla Finder">
       </picture>
       <figcaption>Tech used on the site included Angular, Three.js, geolocation, and Web Navigator APIs.</figcaption>
       <router-link :to="'/work/qibla-finder'" exact class="rarr">Details</router-link>
     </figure>
-    <figure class="slide slide-3" :class="{'slide--active': getCurrentSlide() == 3}" id="slide-3">
+    <figure class="slide slide-3" :class="{'slide--active': getCurrentSlide() == 3}">
       <picture class="with-details" @click="navigateTo('/work/qibla-finder')">
         <img src="../assets/images/google-qibla-finder-02.jpg" alt="Qibla Finder">
       </picture>
@@ -27,12 +27,12 @@
   </div>
 
   <nav class="carousel-controls">
-    <div class="carousel-controls--previous" @click="setPreviousSlide($event)" :class="{'hidden': getCurrentSlide() == 1}">
+    <div class="carousel-controls--previous" @click="setPreviousSlide()" :class="{'hidden': getCurrentSlide() == 1}">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use>
       </svg>
     </div>
-    <div class="carousel-controls--next" @click="setNextSlide($event)" :class="{'hidden': getCurrentSlide() == getLastSlide()}">
+    <div class="carousel-controls--next" @click="setNextSlide()" :class="{'hidden': getCurrentSlide() == getLastSlide()}">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
       </svg>
@@ -42,53 +42,11 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
+import {Component} from 'vue-property-decorator';
+import WorkCarousel from '@/shared/work-carousel';
 
 @Component
-export default class WorkCarouselQiblaFinder extends Vue {
-  private currentSlide = 1;
-  private totalSlides?: number;
-
-  mounted() {
-    const slidesContainer = this.$refs.slidesContainer as HTMLElement;
-    this.totalSlides = slidesContainer.querySelectorAll('figure').length;
-    slidesContainer.querySelectorAll('figure').forEach((slide) => {
-      slide.style.width = slidesContainer.offsetWidth + 'px';
-    });
-  }
-
-  getCurrentSlide() {
-    return this.currentSlide;
-  }
-
-  getLastSlide() {
-    return this.totalSlides;
-  }
-
-  setPreviousSlide(event: Event) {
-    this.currentSlide = this.getCurrentSlide() - 1;
-    this.navigateToSlide(event);
-  }
-
-  setNextSlide(event: Event) {
-    this.currentSlide = this.getCurrentSlide() + 1;
-    this.navigateToSlide(event);
-  }
-
-  navigateToSlide(event: Event) {
-    const currentSlideEl =
-        document.getElementById('slide-' + this.currentSlide);
-    currentSlideEl!.scrollIntoView({
-      // behavior: 'smooth',
-      block: 'nearest',
-      inline: 'center',
-    });
-  }
-
-  navigateTo(route: string) {
-    this.$router.push(route);
-  }
-}
+export default class WorkCarouselQiblaFinder extends WorkCarousel {}
 </script>
 
 <style scoped lang="scss">

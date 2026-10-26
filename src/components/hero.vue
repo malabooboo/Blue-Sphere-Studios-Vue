@@ -4,7 +4,7 @@
       <img src="../assets/images/tim-material-avatar-2-2x.png" alt="Tim's avatar" class="avatar">
     </div>
     <h1 class="intro">Blue Sphere Studios is the portfolio of front end web developer, <strong>Tim Malabuyo</strong>,
-    currently @Google, coding from <span class="strikethrough">London</span> the sunny Bay Area, California.</h1>
+    currently @Waymo.</h1>
   </div>
 </template>
 

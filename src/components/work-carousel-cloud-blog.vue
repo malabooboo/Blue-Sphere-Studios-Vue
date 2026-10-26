@@ -1,7 +1,7 @@
 <template>
 <div class="carousel-wrapper">
   <div class="carousel-slides" ref="slidesContainer">
-    <figure class="slide slide-1" :class="{'slide--active': getCurrentSlide() == 1}" id="slide-1">
+    <figure class="slide slide-1" :class="{'slide--active': getCurrentSlide() == 1}">
       <picture>
         <source srcset="../assets/images/google-cloud-blog-01.webp" type="image/webp">
         <source srcset="../assets/images/google-cloud-blog-01.jpg" type="image/jpeg">
@@ -14,12 +14,12 @@
   </div>
 
   <nav class="carousel-controls">
-    <div class="carousel-controls--previous" @click="setPreviousSlide($event)" :class="{'hidden': getCurrentSlide() == 1}">
+    <div class="carousel-controls--previous" @click="setPreviousSlide()" :class="{'hidden': getCurrentSlide() == 1}">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use>
       </svg>
     </div>
-    <div class="carousel-controls--next" @click="setNextSlide($event)" :class="{'hidden': getCurrentSlide() == getLastSlide()}">
+    <div class="carousel-controls--next" @click="setNextSlide()" :class="{'hidden': getCurrentSlide() == getLastSlide()}">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right"></use>
       </svg>
@@ -29,53 +29,11 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
+import {Component} from 'vue-property-decorator';
+import WorkCarousel from '@/shared/work-carousel';
 
 @Component
-export default class WorkCarouselCloudBlog extends Vue {
-  private currentSlide = 1;
-  private totalSlides?: number;
-
-  mounted() {
-    const slidesContainer = this.$refs.slidesContainer as HTMLElement;
-    this.totalSlides = slidesContainer.querySelectorAll('figure').length;
-    slidesContainer.querySelectorAll('figure').forEach((slide) => {
-      slide.style.width = slidesContainer.offsetWidth + 'px';
-    });
-  }
-
-  getCurrentSlide() {
-    return this.currentSlide;
-  }
-
-  getLastSlide() {
-    return this.totalSlides;
-  }
-
-  setPreviousSlide(event: Event) {
-    this.currentSlide = this.getCurrentSlide() - 1;
-    this.navigateToSlide(event);
-  }
-
-  setNextSlide(event: Event) {
-    this.currentSlide = this.getCurrentSlide() + 1;
-    this.navigateToSlide(event);
-  }
-
-  navigateToSlide(event: Event) {
-    const currentSlideEl =
-        document.getElementById('slide-' + this.currentSlide);
-    currentSlideEl!.scrollIntoView({
-      // behavior: 'smooth',
-      block: 'nearest',
-      inline: 'center',
-    });
-  }
-
-  navigateTo(route: string) {
-    this.$router.push(route);
-  }
-}
+export default class WorkCarouselCloudBlog extends WorkCarousel {}
 </script>
 
 <style scoped lang="scss">

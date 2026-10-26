@@ -57,12 +57,8 @@
         </div>
         <div class="carousel bs-grid-col-12 bs-grid-sm-col-8">
           <transition name="fade">
-            <WorkCarouselStadia
-              v-if="currentWork == 'google-stadia' && !isResizing"
-            />
-            <WorkCarouselYouTube
-              v-if="currentWork == 'youtube' && !isResizing"
-            />
+            <WorkCarouselStadia v-if="currentWork == 'google-stadia'" />
+            <WorkCarouselYouTube v-if="currentWork == 'youtube'" />
             <WorkCarouselEarth v-if="currentWork == 'google-earth'" />
             <WorkCarouselQiblaFinder v-if="currentWork == 'qibla-finder'" />
             <WorkCarouselCloudBlog v-if="currentWork == 'cloud-blog'" />
@@ -75,7 +71,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import WorkCarouselStadia from '@/components/work-carousel-stadia.vue';
 import WorkCarouselYouTube from '@/components/work-carousel-youtube.vue';
 import WorkCarouselEarth from '@/components/work-carousel-earth.vue';
@@ -96,8 +92,6 @@ import WorkCarouselCloudBlog from '@/components/work-carousel-cloud-blog.vue';
 export default class Work extends Vue {
   tenure = 3;
   currentWork = 'google-stadia';
-  @Prop() isResizing?: boolean;
-
   private startYear = 2013;
   private currentYear = new Date().getFullYear();
 

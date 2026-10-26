@@ -4,10 +4,10 @@
       <Hero />
     </section>
     <section class="section-work bs-grid" id="work">
-      <Work :isResizing="isResizing" />
+      <Work />
     </section>
     <section class="section-past-work bs-grid" id="past-work">
-      <PastWork class="in-view" :class="{'in-view': sectionSeenState['past-work']}" />
+      <PastWork :class="{'in-view': sectionSeenState['past-work']}" />
     </section>
     <section class="section-stats bs-grid" id="stats">
       <Stats :class="{'in-view': sectionSeenState['stats']}" />
@@ -22,14 +22,13 @@
 </template>
 
 <script lang="ts">
-import {Component, Prop, Watch, Vue} from 'vue-property-decorator';
+import {Component, Vue} from 'vue-property-decorator';
 import Hero from '@/components/hero.vue';
 import Work from '@/components/work.vue';
 import PastWork from '@/components/past-work.vue';
 import Stats from '@/components/stats.vue';
 import About from '@/components/about.vue';
 import Contact from '@/components/contact.vue';
-import SectionPositionInfo from '../shared/interfaces';
 
 interface SectionState {
   'past-work': boolean;
@@ -58,95 +57,56 @@ export default class Home extends Vue {
     'contact': false,
   };
 
-  @Prop() isResizing?: boolean;
-  @Prop() private scrollValue?: number;
-
-  /** The current section info. */
-  private currentSection: SectionPositionInfo = {
-    name: 'home',
-    yPositionStart: 0,
-    yPositionEnd: 0,
-  };
-
-  /** An array of the sections and their info */
-  private sectionPositions: SectionPositionInfo[] = [];
-
-  /*
-   * Triggers the nav show/hide, and current section indicator.
-   * Watches the scoll value property, the scrollTop value passed down from the
-   * parent component.
-   */
-  @Watch('scrollValue')
-  private onScrollValueChanged(value: number, oldValue: number) {
-    if (!this.sectionPositions) {
-      return;
-    }
-
-    const viewportHeight = document.documentElement.clientHeight;
-    const adjustedPosition = value + viewportHeight - viewportHeight * .6;
-
-    for (const section of this.sectionPositions) {
-      // Sets the current section based on the scroll position.
-      if (value > section.yPositionStart && value < section.yPositionEnd) {
-        this.currentSection = section;
-      }
-
-      // Sets 'seen' value to trigger build-in animation
-      if (adjustedPosition > section.yPositionStart) {
-        const keys = Object.keys(this.sectionSeenState);
-        for (const key of keys) {
-          if (key === section.name) {
-            this.sectionSeenState[key] = true;
-          }
-
-          // Exception for the bottom-most section.  Bulid-in at the same time
-          // as the about section.
-          if (key === 'about') {
-            const lastSection = 'contact';
-            this.sectionSeenState[lastSection] = true;
-          }
-        }
-      }
-    }
-  }
-
-  /**
-   * Watches currentSection for changes and emits it up to the parent for
-   * adding/removing the current section styling in the SiteHeader component.
-   * (This could be done by adding a class name to the body, but doing it this
-   * way to learn Vue).
-   */
-  @Watch('currentSection')
-  private onCurrentSectionChanged(value: number, oldValue: number) {
-    this.$emit('section-change', this.currentSection);
-  }
+  private observers: IntersectionObserver[] = [];
 
   private mounted() {
-    this.setSectionsInfo();
+    const sections = Array.from(this.$el.querySelectorAll('section'));
+
+    // Current section: whichever section crosses the middle of the viewport.
+    // Emitted up to the parent for the SiteHeader's current section styling.
+    // (This could be done by adding a class name to the body, but doing it
+    // this way to learn Vue).
+    const currentSectionObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          this.$emit('section-change', entry.target.id);
+        }
+      }
+    }, {rootMargin: '-50% 0px -50% 0px'});
+
+    // Build-in animation: a section is 'seen' once its top passes 40% of the
+    // way down the viewport. The root extends far above the viewport so
+    // sections skipped over by a jump (e.g. reload mid-page) also count.
+    const seenObserver = new IntersectionObserver((entries, observer) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          this.markSeen(entry.target.id);
+          observer.unobserve(entry.target);
+        }
+      }
+    }, {rootMargin: '100000px 0px -60% 0px'});
+
+    for (const section of sections) {
+      currentSectionObserver.observe(section);
+      if (section.id in this.sectionSeenState) {
+        seenObserver.observe(section);
+      }
+    }
+    this.observers = [currentSectionObserver, seenObserver];
   }
 
-  /**
-   * Creates the array of sections and their scroll positions.
-   */
-  private setSectionsInfo() {
-    const sectionsEl = document.querySelector('.router-wrapper');
-    if (!sectionsEl) {
-      return;
-    }
+  private beforeDestroy() {
+    this.observers.forEach((observer) => observer.disconnect());
+  }
 
-    const sectionPositions: SectionPositionInfo[] = [];
-    const sectionsEls = sectionsEl.querySelectorAll('section');
-    for (const section of sectionsEls) {
-      const yPositionStart = section.offsetTop;
-      const yPositionEnd = section.offsetTop + section.offsetHeight;
-      const sectionInfo: SectionPositionInfo = {
-        name: section.id,
-        yPositionStart,
-        yPositionEnd,
-      };
-      sectionPositions.push(sectionInfo);
+  private markSeen(name: string) {
+    this.sectionSeenState[name] = true;
+
+    // Exception for the bottom-most section, which may never scroll far enough
+    // up to trigger on its own. Build-in at the same time as the about section.
+    if (name === 'about') {
+      this.sectionSeenState.contact = true;
     }
-    this.sectionPositions = sectionPositions;
   }
 }
 </script>

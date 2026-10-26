@@ -11,13 +11,13 @@
     </div>
     <nav v-if="!isWorkDetailPage">
       <ul class="global-nav">
-        <li v-if="currentSection" :class="{'selected': currentSection.name == 'home'}"  class="nav-item">
+        <li :class="{'selected': activeSection == 'home'}" class="nav-item">
           <span><a href="#home" v-smooth-scroll class="gnav-link">Home</a></span>
         </li>
-        <li v-if="currentSection" :class="{'selected': currentSection.name == 'work' || currentSection.name == 'past-work' || currentSection.name == 'stats'}" class="nav-item">
+        <li :class="{'selected': ['work', 'past-work', 'stats'].includes(activeSection)}" class="nav-item">
           <span><a href="#work" v-smooth-scroll class="gnav-link">Work</a></span>
         </li>
-        <li v-if="currentSection" :class="{'selected': currentSection.name == 'about'}" class="nav-item">
+        <li :class="{'selected': activeSection == 'about'}" class="nav-item">
           <span><a href="#about" v-smooth-scroll class="gnav-link mobile-hidden">About</a></span>
         </li>
       </ul>
@@ -34,9 +34,8 @@
 </template>
 
 <script lang="ts">
-import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
+import {Component, Prop, Vue} from 'vue-property-decorator';
 import Logo from '@/shared/logo.vue';
-import SectionPositionInfo from '../shared/interfaces';
 
 @Component({
   components: {
@@ -44,27 +43,51 @@ import SectionPositionInfo from '../shared/interfaces';
   },
 })
 export default class SiteHeader extends Vue {
-  @Prop() currentSection?: SectionPositionInfo;
-  @Prop() scrollValue?: number;
+  @Prop() currentSection?: string;
   @Prop() isWorkDetailPage?: boolean;
   isScrollDirectionUp: boolean = true;
+  isAtTop: boolean = true;
+
+  /** Last scroll position. Assigned in mounted() so it isn't reactive. */
+  private lastScrollY!: number;
+
+  /**
+   * The nav item to highlight. Always 'home' at the very top of the page,
+   * since on tall viewports the next section can already be mid-viewport.
+   */
+  get activeSection() {
+    return this.isAtTop ? 'home' : this.currentSection;
+  }
 
   navigateHome() {
     this.$router.push('/');
   }
 
-  /*
-   * Triggers the nav show/hide
-   * Watches the scoll value property, the scrollTop value passed down from the
-   * parent component.
+  private mounted() {
+    this.lastScrollY = window.scrollY;
+    this.isAtTop = window.scrollY <= 0;
+    window.addEventListener('scroll', this.onScroll, {passive: true});
+  }
+
+  private beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll);
+  }
+
+  /**
+   * Hides the nav when scrolling down, shows it when scrolling up, and tracks
+   * whether the page is scrolled to the top.
    */
-  @Watch('scrollValue')
-  private onScrollValueChange(value: number, oldValue: number) {
-    if (value > oldValue) {
-      this.isScrollDirectionUp = false;
-    } else {
-      this.isScrollDirectionUp = true;
+  private onScroll() {
+    const scrollY = window.scrollY;
+    const isUp = scrollY <= this.lastScrollY;
+    if (isUp !== this.isScrollDirectionUp) {
+      this.isScrollDirectionUp = isUp;
     }
+    const isAtTop = scrollY <= 0;
+    if (isAtTop !== this.isAtTop) {
+      this.isAtTop = isAtTop;
+    }
+    this.lastScrollY = scrollY;
   }
 }
 </script>
