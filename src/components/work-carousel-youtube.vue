@@ -21,8 +21,8 @@
           />
         </picture>
         <figcaption>
-          In my current role at Google, I am a UX Engineer for a new YouTube
-          feature, "Playables", which brings playable games into YouTube. I work
+          I was an early UX Engineer for the YouTube
+          feature, "Playables", which brings playable games into YouTube. I worked
           closely with UX to prototype designs and user journeys, and with
           engineering to bring those prototypes to production.
           <a href="https://youtube.com/playables" target="_blank"

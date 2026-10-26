@@ -5,9 +5,8 @@
       <div class="carousel-content bs-grid no-padding">
         <div class="recent-work bs-grid-col-12 bs-grid-sm-col-4">
           <p class="intro">
-            Over the last {{ tenure }} years as a User Experience Engineer on
-            several Google and YouTube teams in London and the California Bay
-            Area, I've had the opportunity to work with some amazing people on
+            With over more than {{ tenure }} years as a User Experience Engineer at Waymo, as well as several Google and YouTube teams in London and the California Bay
+            Area, I have had the opportunity to work with some amazing people on
             many different projects.
           </p>
           <ul>

@@ -1,7 +1,7 @@
 <template>
 <div class="site-width bs-grid no-padding">
   <div class="titles bs-grid-col-12 bs-grid-sm-col-4">
-    <h2>Skills and Stats</h2>
+    <h2>Tech and Skills</h2>
     <p>Some of the tech I've used recently...</p>
   </div>
   <ul class="tags bs-grid-col-12 bs-grid-sm-col-8">
@@ -9,6 +9,8 @@
     <li>CSS</li>
     <li>JavaScript</li>
     <li>TypeScript</li>
+    <li>AI Models</li>
+    <li>AI Agentic coding</li>
     <li>Angular</li>
     <li>React</li>
     <li>Next.js</li>

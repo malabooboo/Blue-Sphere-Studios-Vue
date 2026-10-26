@@ -12,7 +12,7 @@
                   bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
         <p class="intro">Hello!  I'm Tim, a software engineer specializing in front end and user experience.</p>
         <p>
-          Currently, I'm a Waymo User Experience Engineer (UXE), but have been on various teams at Google since 2013, including Brand Studio, Cloud, Stadia (RIP), and YouTube.
+          Currently, I'm a Waymo User Experience Engineer (UXE), and before that spent over 12 years on various teams at Google, including Brand Studio, Cloud, Stadia (RIP), and YouTube.
           I love building products as part of a great team, and am in my zone when coding with a boba and good music.
         </p>
       </div>

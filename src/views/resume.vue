@@ -29,7 +29,7 @@
         <div class="work">
           <div class="work-summary">
             <div class="work-headings">
-              <h4 class="dates">Sep 2013 - current</h4>
+              <h4 class="dates">Sep 2013 - Apr 2026</h4>
               <h3 class="company">Google / YouTube</h3>
               <h4 class="job-title">Senior User Experience Engineer (UXE)</h4>
             </div>
@@ -44,7 +44,7 @@
             <li>Front end production and prototype work across several Alphabet teams including YouTube, Stadia, Google Cloud, Google Earth, Google Photos, and Brand Studio</li>
             <li>Roles
               <ul style="margin-bottom: 0;">
-                <li>Currently the YouTube Playables UXE: both a prototyper for design and user studies, as well as an engineer on the final production build of the product</li>
+                <li>YouTube Playables UXE: both a prototyper for design and user studies, as well as an engineer on the final production build of the product</li>
                 <li>Senior UXE on the Stadia UX team, and the primary UXE for the web platform: built features such as platform search, the game menu, and a homepage redesign, developed and enforced the Stadia's design system</li>
                 <li>Senior UXE with Google Cloud: created pages on cloud.google.com for all Google Cloud products, and was a key team member in the development of the Cloud Blog and CMS</li>
                 <li>Founding engineer of Brand Studio EMEA in London: built sites including Petra Maps and Qibla Finder which cultivated Google's brand in that region</li>

@@ -10,7 +10,7 @@
                   bs-grid-col-12
                   bs-grid-sm-md-offset-3 bs-grid-sm-md-col-6">
         <p>In early 2021 Stadia presented a plan to provide Stadia's streaming technology to partners, a key deliverable being a client SDK. The SDK's UI library was designed so it could either be used with no modification, or customized for branding. The first of these partnerships was with AT&T, and launched Batman Arkham Knight in Oct 2021.</p>
-        <p>I was the sole UX Engineer that planned, and built the UI on LitElement and TypeScript, and continue to work in partnership with SWEs building the API and UX Design in defining the design system needed for the Google Immersive Stream for Games SDK.</p>
+        <p>I was the sole UX Engineer that planned, and built the UI on LitElement and TypeScript, and worked in partnership with SWEs building the API and UX Design to define the design system needed for the Google Immersive Stream for Games SDK.</p>
       </div>
     </section>
 
