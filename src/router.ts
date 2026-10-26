@@ -92,7 +92,7 @@ export default new Router({
       component: () => import('./views/work-qibla-finder.vue'),
       meta: {
         title: 'Qibla Finder - Blue Sphere Studios / Tim Malabuyo',
-        description: 'Details about Qilba Finder, part of the portfolio of Tim Malabuyo, UX Engineer',
+        description: 'Details about Qibla Finder, part of the portfolio of Tim Malabuyo, UX Engineer',
       },
     },
     {

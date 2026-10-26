@@ -21,6 +21,10 @@ import SiteFooter from '@/shared/site-footer.vue';
 import SvgAssets from '@/shared/svg-assets.vue';
 import SectionPositionInfo from './shared/interfaces';
 
+const DEFAULT_TITLE = document.title;
+const metaDescription = document.querySelector('head meta[name="description"]');
+const DEFAULT_DESCRIPTION = metaDescription?.getAttribute('content') || '';
+
 type Timer = ReturnType<typeof setTimeout>;
 
 @Component({
@@ -61,16 +65,9 @@ export default class App extends Vue {
         (newVal.path).includes('/work/') || (newVal.path).includes('/resume') || (newVal.path).includes('/about-me');
     }
 
-    // Changes title, description
-    if (newVal.meta && newVal.meta.title) {
-      document.title = `${newVal.meta.title} - Blue Sphere Studios`;
-    }
-    if (newVal.meta && newVal.meta.description) {
-      const metaDescription = document.querySelector(
-        'head meta[name="description"]',
-      );
-      metaDescription?.setAttribute('content', newVal.meta.description);
-    }
+    // Changes title, description, falling back to the defaults in index.html
+    document.title = newVal.meta?.title || DEFAULT_TITLE;
+    metaDescription?.setAttribute('content', newVal.meta?.description || DEFAULT_DESCRIPTION);
   }
 
   private mounted() {
