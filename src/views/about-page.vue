@@ -64,7 +64,7 @@
         </p>
         <figure>
           <picture>
-            <source srcset="@/assets/images/uxe-bridge.png, @/assets/images/uxe-bridge@2x.png 2x" type="image/png]"></source>
+            <source srcset="@/assets/images/uxe-bridge.png, @/assets/images/uxe-bridge@2x.png 2x" type="image/png">
             <img src="@/assets/images/uxe-bridge@2x.png" alt="">
           </picture>
         </figure>
@@ -85,11 +85,11 @@ export default class AboutPage extends Vue {}
 </script>
 
 <style scoped lang="scss">
-@import '../shared/scss/vars';
-@import '../shared/scss/mixins';
-@import '../shared/scss/grid';
-@import '../shared/scss/work';
-@import '../shared/scss/utils';
+@use '../shared/scss/vars' as *;
+@use '../shared/scss/mixins' as *;
+@use '../shared/scss/grid' as *;
+@use '../shared/scss/work' as *;
+@use '../shared/scss/utils' as *;
 
 .page-wrapper {
   margin-top: 0;

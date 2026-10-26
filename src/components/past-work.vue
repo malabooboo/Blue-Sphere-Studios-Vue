@@ -60,9 +60,9 @@ export default class PastWork extends Vue {}
 </script>
 
 <style scoped lang="scss">
-@import '../shared/scss/vars';
-@import '../shared/scss/mixins';
-@import '../shared/scss/grid';
+@use '../shared/scss/vars' as *;
+@use '../shared/scss/mixins' as *;
+@use '../shared/scss/grid' as *;
 
 .secondary-content {
   border-top: 1px solid #ddd;

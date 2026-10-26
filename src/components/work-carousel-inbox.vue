@@ -64,5 +64,5 @@ export default class WorkCarouselInbox extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import '../shared/scss/work-carousel';
+@use '../shared/scss/work-carousel' as *;
 </style>

@@ -70,8 +70,8 @@ export default class SiteHeader extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import '../shared/scss/vars';
-@import '../shared/scss/mixins';
+@use '../shared/scss/vars' as *;
+@use '../shared/scss/mixins' as *;
 
 $header-height: 70px;
 

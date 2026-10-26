@@ -5,25 +5,30 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "lint": "eslint src",
     "deploy": "npm run build && firebase deploy --only hosting"
   },
   "dependencies": {
-    "core-js": "^3.6.4",
-    "firebase": "^8.2.4",
-    "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
-    "vue-property-decorator": "^8.4.1",
-    "vue-router": "^3.1.6",
+    "core-js": "^3.51.0",
+    "vue": "^2.7.16",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.6.5",
     "vue-smooth-scroll": "^1.0.13"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.2.0",
-    "@vue/cli-plugin-typescript": "~4.2.0",
-    "@vue/cli-service": "~4.2.0",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.2",
-    "typescript": "~4.4.4",
-    "vue-template-compiler": "^2.6.11"
+    "@eslint/js": "^10.0.1",
+    "@vue/cli-plugin-babel": "^5.0.9",
+    "@vue/cli-plugin-typescript": "^5.0.9",
+    "@vue/cli-service": "^5.0.9",
+    "eslint": "^10.13.0",
+    "eslint-plugin-vue": "^10.11.1",
+    "globals": "^17.13.0",
+    "sass": "^1.106.1",
+    "sass-loader": "^17.0.1",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.0",
+    "vue-eslint-parser": "^10.4.1",
+    "vue-template-compiler": "2.7.16"
   }
 }

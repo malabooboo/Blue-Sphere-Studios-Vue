@@ -15,6 +15,7 @@
 
 <script lang="ts">
 import {Component, Vue, Watch} from 'vue-property-decorator';
+import { Route } from 'vue-router';
 import SiteHeader from '@/shared/site-header.vue';  // @ is an alias to /src
 import SiteFooter from '@/shared/site-footer.vue';
 import SvgAssets from '@/shared/svg-assets.vue';
@@ -49,7 +50,7 @@ export default class App extends Vue {
   }
 
   @Watch('$route', { immediate: true, deep: true })
-  private onUrlChange(newVal: any) {
+  private onUrlChange(newVal: Route) {
     if (!newVal) {
       return;
     }
@@ -62,9 +63,7 @@ export default class App extends Vue {
 
     // Changes title, description
     if (newVal.meta && newVal.meta.title) {
-      document.title =
-        `${newVal.meta.title} - Blue Sphere Studios` ||
-        'Blue Sphere Studios / Tim Malabuyo / Front end developer / UX Engineer / Portfolio';
+      document.title = `${newVal.meta.title} - Blue Sphere Studios`;
     }
     if (newVal.meta && newVal.meta.description) {
       const metaDescription = document.querySelector(

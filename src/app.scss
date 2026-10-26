@@ -1,6 +1,6 @@
-@import './shared/scss/vars';
-@import './shared/scss/mixins';
-@import './shared/scss/base';
+@use './shared/scss/vars' as *;
+@use './shared/scss/mixins' as *;
+@use './shared/scss/base' as *;
 
 .fade-enter-active {
   transform: translateY(0);

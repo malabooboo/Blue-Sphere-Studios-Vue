@@ -1,4 +1,5 @@
-@import './vars';
+@forward './vars';
+@use './vars' as *;
 
 @mixin site-width {
   box-sizing: border-box;

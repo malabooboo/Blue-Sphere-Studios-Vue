@@ -96,5 +96,5 @@ export default class WorkCarouselPetra extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import '../shared/scss/work-carousel';
+@use '../shared/scss/work-carousel' as *;
 </style>

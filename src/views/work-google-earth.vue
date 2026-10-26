@@ -103,10 +103,10 @@ export default class WorkStadiaHomeRedesign extends Vue {}
 </script>
 
 <style scoped lang="scss">
-@import '../shared/scss/vars';
-@import '../shared/scss/mixins';
-@import '../shared/scss/grid';
-@import '../shared/scss/work';
+@use '../shared/scss/vars' as *;
+@use '../shared/scss/mixins' as *;
+@use '../shared/scss/grid' as *;
+@use '../shared/scss/work' as *;
 
 .full-bleed {
   margin-top: 30px;

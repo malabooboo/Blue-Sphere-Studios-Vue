@@ -120,9 +120,9 @@ export default class Work extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import '../shared/scss/vars';
-@import '../shared/scss/mixins';
-@import '../shared/scss/grid';
+@use '../shared/scss/vars' as *;
+@use '../shared/scss/mixins' as *;
+@use '../shared/scss/grid' as *;
 
 .intro {
   margin-bottom: 40px;

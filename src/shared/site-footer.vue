@@ -20,8 +20,8 @@ export default class SiteFooter extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import './scss/vars';
-@import './scss/grid';
+@use './scss/vars' as *;
+@use './scss/grid' as *;
 
 footer{
   background-color: #223c6e;

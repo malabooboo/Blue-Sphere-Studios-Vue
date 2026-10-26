@@ -79,8 +79,8 @@ export default class WorkCarouselCloudBlog extends Vue {
 </script>
 
 <style scoped lang="scss">
-@import '../shared/scss/vars';
-@import '../shared/scss/work-carousel';
+@use '../shared/scss/vars' as *;
+@use '../shared/scss/work-carousel' as *;
 
 .carousel-controls {
   display: none;
