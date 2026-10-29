@@ -1,7 +1,10 @@
 <template>
 <div class="site-width work-container">
   <div class="secondary-content bs-grid">
-      <h2 class="past-work-heading bs-grid-col-12 bs-grid-sm-md-col-4">Past work</h2>
+      <div class="past-work-heading bs-grid-col-12 bs-grid-sm-md-col-4">
+        <h2 style="margin-bottom: 10px;">Past work</h2>
+        <p>My past work prior to Alphabet.</p>
+      </div>
       <div class="work work-1 bs-grid-col-12 bs-grid-sm-md-col-8">
         <div class="content-filemaker bs-grid-col-12 bs-grid no-padding simple">
           <div class="image-container bs-grid-col-12 bs-grid-sm-col-3">

@@ -5,9 +5,8 @@
       <div class="carousel-content bs-grid no-padding">
         <div class="recent-work bs-grid-col-12 bs-grid-sm-col-4">
           <p class="intro">
-            With over more than {{ tenure }} years as a User Experience Engineer at Waymo, as well as several Google and YouTube teams in London and the California Bay
-            Area, I have had the opportunity to work with some amazing people on
-            many different projects.
+            Of my {{ careerExperience }} years of experience in the tech industry, I have spent {{ tenure }} of those years as an engineer at Alphabet, including Google, YouTube, and Waymo teams in the California Bay
+            Area and London, and have  had the opportunity to work with some amazing people on many different projects.  Some highlights include the following: 
           </p>
           <ul>
             <li>
@@ -91,14 +90,17 @@ import WorkCarouselCloudBlog from '@/components/work-carousel-cloud-blog.vue';
 export default class Work extends Vue {
   tenure = 3;
   currentWork = 'google-stadia';
+  private graduationYear = 2001;
   private startYear = 2013;
   private currentYear = new Date().getFullYear();
+  private careerExperience = 0;
 
   setWork(work: string) {
     this.currentWork = work;
   }
 
   private mounted() {
+    this.careerExperience = this.yearsSince_(this.graduationYear, this.currentYear);
     this.tenure = this.yearsSince_(this.startYear, this.currentYear);
   }
 
