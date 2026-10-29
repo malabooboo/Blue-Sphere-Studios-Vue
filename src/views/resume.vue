@@ -19,7 +19,7 @@
                   bs-grid-md-offset-2 bs-grid-md-col-8
                   bs-grid-lg-offset-2 bs-grid-lg-col-6">
         <p>Experienced software engineer with a unique combination of a background in <span>art and design</span> paired
-          with over 25 years of tech industry expertise in front end web technologies.</p>
+          with {{ careerExperience }} years of tech industry expertise in front end web technologies.</p>
       </div>
     </section>
     <section class="compare bs-grid">
@@ -258,12 +258,15 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { CAREER_START_YEAR, yearsSince } from '@/shared/career';
 
 @Component({
   components: {
   },
 })
-export default class Resume extends Vue { }
+export default class Resume extends Vue {
+  readonly careerExperience = yearsSince(CAREER_START_YEAR);
+}
 </script>
 
 <style scoped lang="scss">

@@ -76,6 +76,7 @@ import WorkCarouselEarth from '@/components/work-carousel-earth.vue';
 import WorkCarouselQiblaFinder from '@/components/work-carousel-qibla-finder.vue';
 import WorkCarouselPetra from '@/components/work-carousel-petra.vue';
 import WorkCarouselCloudBlog from '@/components/work-carousel-cloud-blog.vue';
+import { ALPHABET_START_YEAR, CAREER_START_YEAR, yearsSince } from '@/shared/career';
 
 @Component({
   components: {
@@ -88,24 +89,12 @@ import WorkCarouselCloudBlog from '@/components/work-carousel-cloud-blog.vue';
   },
 })
 export default class Work extends Vue {
-  tenure = 3;
+  readonly careerExperience = yearsSince(CAREER_START_YEAR);
+  readonly tenure = yearsSince(ALPHABET_START_YEAR);
   currentWork = 'google-stadia';
-  private graduationYear = 2001;
-  private startYear = 2013;
-  private currentYear = new Date().getFullYear();
-  private careerExperience = 0;
 
   setWork(work: string) {
     this.currentWork = work;
-  }
-
-  private mounted() {
-    this.careerExperience = this.yearsSince_(this.graduationYear, this.currentYear);
-    this.tenure = this.yearsSince_(this.startYear, this.currentYear);
-  }
-
-  private yearsSince_(date1: number, date2: number): number {
-    return date2 - date1;
   }
 
   private getWork(): string {
